@@ -9,6 +9,7 @@ function tailpress_setup() {
 	register_nav_menus(
 		array(
 			'primary' => __( 'Primary Menu', 'tailpress' ),
+			'footer' => __('Footer Menu', 'tailpress')
 		)
 	);
 
@@ -108,4 +109,9 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 	return $classes;
 }
 
+function add_tailwind_css() {
+    wp_enqueue_style('tailwind-css', 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+}
+add_action('wp_enqueue_scripts', 'add_tailwind_css');
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+

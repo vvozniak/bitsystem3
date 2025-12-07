@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-black text-white antialiased' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -17,75 +17,191 @@
 
 	<?php do_action( 'tailpress_header' ); ?>
 
-	<header>
+	
+    <header class="bg-black text-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <!-- Logo -->
+        <a href="<?php echo home_url(); ?>" class="text-xl font-bold">Firma</a>
 
-		<div class="mx-auto container">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
-				<div class="flex justify-between items-center">
-					<div>
-						<?php if ( has_custom_logo() ) { ?>
-                            <?php the_custom_logo(); ?>
-						<?php } else { ?>
-							<a href="<?php echo get_bloginfo( 'url' ); ?>" class="font-extrabold text-lg uppercase">
-								<?php echo get_bloginfo( 'name' ); ?>
-							</a>
+        <!-- Menu dla dużych ekranów -->
+        <nav class="hidden lg:flex space-x-6">
+            <a href="<?php echo home_url('/oferta'); ?>" class="hover:text-gray-400">Oferta</a>
+            <a href="<?php echo home_url('/o-nas'); ?>" class="hover:text-gray-400">O nas</a>
+            <a href="<?php echo home_url('/realizacje'); ?>" class="hover:text-gray-400">Realizacje</a>
+            <a href="<?php echo home_url('/współpraca'); ?>" class="hover:text-gray-400">Współpraca</a>
+        </nav>
 
-							<p class="text-sm font-light text-gray-600">
-								<?php echo get_bloginfo( 'description' ); ?>
-							</p>
+        <!-- Przycisk Kontakt -->
+        <a href="<?php echo home_url('/kontakt'); ?>" class="hidden lg:block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
+            Kontakt
+        </a>
 
-						<?php } ?>
-					</div>
+        <!-- Przycisk mobilny -->
+        <button id="menu-toggle" class="lg:hidden text-white text-3xl">
+            ☰
+        </button>
+    </div>
 
-					<div class="lg:hidden">
-						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-							<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
-								 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-									<g id="icon-shape">
-										<path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-											  id="Combined-Shape"></path>
-									</g>
-								</g>
-							</svg>
-						</a>
-					</div>
-				</div>
+    <!-- Menu mobilne -->
+    <nav id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-black flex flex-col items-center space-y-4 py-4">
+        <a href="<?php echo home_url('/oferta'); ?>" class="hover:text-gray-400">Oferta</a>
+        <a href="<?php echo home_url('/o-nas'); ?>" class="hover:text-gray-400">O nas</a>
+        <a href="<?php echo home_url('/realizacje'); ?>" class="hover:text-gray-400">Realizacje</a>
+        <a href="<?php echo home_url('/współpraca'); ?>" class="hover:text-gray-400">Współpraca</a>
+        <a href="<?php echo home_url('/kontakt'); ?>" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">Kontakt</a>
+    </nav>
+</header>
 
-				<?php
-				wp_nav_menu(
-					array(
-						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-						'menu_class'      => 'lg:flex lg:-mx-4',
-						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4',
-						'fallback_cb'     => false,
-					)
-				);
-				?>
-			</div>
-		</div>
-	</header>
+<!-- JavaScript do rozwijania menu -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+    });
+});
+</script>
+
+
+
 
 	<div id="content" class="site-content grow">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
-			<div class="container mx-auto">
-				<div class="px-12 py-16 my-12 rounded-xl bg-linear-to-r from-blue-50 from-10% via-sky-100 via-30% to-blue-200 to-90%">
-                    <div class="mx-auto max-w-(--breakpoint-md)">
-                        <h1 class="text-3xl lg:text-6xl tracking-tight font-extrabold text-gray-800 mb-6">Start building your next <a href="https://tailwindcss.com" class="text-secondary">Tailwind CSS</a> flavoured WordPress theme
-                            with <a href="https://tailpress.io" class="text-primary">TailPress</a>.</h1>
-                        <p class="text-gray-600 text-xl font-medium mb-10">TailPress is your go-to starting
-                            point for developing WordPress themes with Tailwind CSS and comes with basic block-editor support out
-                            of the box.</p>
-                        <a href="https://github.com/jeffreyvr/tailpress"
-                            class="w-full sm:w-auto flex-none bg-gray-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-hidden transition-colors duration-200">View
-                            on GitHub</a>
-                    </div>
+<div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+    
+    <!-- Sekcja tekstowa -->
+    <div class="hero max-w-lg text-center lg:text-left">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+            Strony <br>internetowe<br> z szablonów
+        </h1>
+        <p class="text-gray-300 text-lg my-4">
+            Niesamowite strony internetowe z szablonów,<br> sprawdź je teraz, ceny od 10 do 1000zł za <br>realizację!
+        </p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg text-lg transition">
+            Oferta
+        </a>
+    </div>
+
+    <!-- Sekcja telefonu -->
+    <div class="relative w-full max-w-xs sm:max-w-md lg:max-w-lg mt-12 lg:mt-0">
+        <!-- Obraz telefonu -->
+        <img src="http://praktyki1.local/wp-content/uploads/2025/03/phone-1.png" alt="Telefon" class="w-full">
+    </div>
+
+</div>
+
+<section class="pricing-section">
+        <h2 class="section-title">Wybierz jeden z naszych pakietów</h2>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Standard</h3>
+                <p class="subtitle">Podstawowa strona</p>
+                <p class="price">199zł <span>miesięcznie</span></p>
+                <button class="choose-btn">Wybierz</button>
+                <ul class="features">
+                    <li>✔ Wsparcie firmowe</li>
+                    <li>✔ Poprawki 3x w miesiącu</li>
+                    <li>✔ Natychmiastowa pomoc</li>
+                    <li>✔ Szybka realizacja projektu</li>
+                </ul>
+                <hr>
+                <ul class="package-details">
+                    <li>✅ Landing page</li>
+                    <li>✅ 4 podstrony</li>
+                    <li>✅ Responsywność</li>
+                    <li>✅ Formularz kontaktowy</li>
+                    <li>✅ Płatności na stronie</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Pro</h3>
+                <p class="subtitle">Pro strona</p>
+                <p class="price">399zł <span>miesięcznie</span></p>
+                <button class="choose-btn">Wybierz</button>
+                <ul class="features">
+                    <li>✔ Wsparcie firmowe</li>
+                    <li>✔ Poprawki 3x w miesiącu</li>
+                    <li>✔ Natychmiastowa pomoc</li>
+                    <li>✔ Szybka realizacja projektu</li>
+                </ul>
+                <hr>
+                <ul class="package-details">
+                    <li>✅ Landing page</li>
+                    <li>✅ 4 podstrony</li>
+                    <li>✅ Responsywność</li>
+                    <li>✅ Formularz kontaktowy</li>
+                    <li>✅ Płatności na stronie</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<br>
+
+
+
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="http://praktyki1.local/wp-content/uploads/2025/03/smiling-creative-business-team-discussing-over-lap-566JQTQ-1.png" alt="Zespół przy pracy" style="max-width: 100%; height: auto; border-radius: 10px;">
+        </div>
+        <div class="about-text">
+            <h2>Prężnie rozwijająca się firma</h2>
+            <p>Jesteśmy prężnie rozwijającą się firmą z młodym zespołem. Nasza firma liczy ponad 100 pracowników na całym świecie.</p>
+            <p>Nie przestajemy się rozwijać i pracujemy to w coraz nowocześniejszych technologiach, jesteśmy top 1 na rynku w Polsce.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-black text-white py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center">
+            Specjalizujemy się w <br>
+            <span class="text-gray-300">następujących kategoriach</span>
+        </h2>
+        <p class="text-center text-gray-400 mt-4 max-w-lg mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+            <?php 
+            $categories = array("Rebranding", "Rebranding", "Rebranding", "Rebranding", "Rebranding", "Rebranding");
+            foreach ($categories as $category) : ?>
+                <div class="bg-black p-6 rounded-lg text-center transition hover:bg-gray-700">
+                    <img src="http://praktyki1.local/wp-content/uploads/2025/03/Frame.png" alt="Ikona"
+                        class="w-12 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold"><?php echo $category; ?></h3>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.
+                    </p>
                 </div>
-			</div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<section class="flex justify-center py-12">
+    <div class="bg-blue-600 text-white text-center p-10 rounded-3xl max-w-4xl shadow-lg">
+        <h2 class="text-3xl font-bold">Nasza oferta jest limitowana!</h2>
+        <p class="text-gray-200 mt-4">
+            Nasza oferta jest ograniczona czasowo, skorzystaj z aktualnych promocji i 
+            miej własną stronę w ciągu kilku dni!
+        </p>
+        <a href="/oferta" class="mt-6 inline-block bg-white text-black font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition">
+            Oferta
+        </a>
+    </div>
+</section>
+
+
+
+
+<?php get_footer(); ?>
 			<!-- End introduction -->
 		<?php } ?>
 

@@ -1,20 +1,26 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/destkop7'); ?>
+<?php get_template_part('template-parts/destkop8'); ?>
+<?php get_template_part('template-parts/destkop9'); ?>
+<?php get_template_part('template-parts/destkop11'); ?>
+<?php get_template_part('template-parts/destkop10'); ?>
+<body>
 
-<div class="container mx-auto my-8">
 
-	<?php if ( have_posts() ) : ?>
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
 
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-		<?php endwhile; ?>
 
-	<?php endif; ?>
 
+
+
+<?php get_footer(); ?>
+
+
+</body>
+
+    <?php the_content(); ?>
 </div>
+
 
 <?php
 get_footer();
