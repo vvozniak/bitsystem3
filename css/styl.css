@@ -102,6 +102,57 @@
   border-radius: 9999px;
   padding: 0;
 }
+
+/* --- SUBMENU / DROPDOWN --- */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  margin: 0.5vw 0 0 0;
+  padding: 0.5vw 0;
+  min-width: 12vw;
+  z-index: 10000;
+}
+
+.submenu li {
+  display: block;
+  height: auto;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.8vw 1.5vw !important;
+  color: #000;
+  text-decoration: none;
+  border-radius: 0;
+  height: auto !important;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.submenu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-arrow {
+  font-size: 0.6em;
+  margin-left: 0.3vw;
+  transition: transform 0.3s ease;
+}
+
+.has-submenu:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
 /* --- WERSJA MOBILNA --- */
 @media (max-width: 768px) {
   /* Biała kapsuła – trochę przestrzeni i cień */
@@ -187,6 +238,33 @@
     margin-bottom: 2vw;
     height: auto;
   }
+  
+  /* Submenu na mobile */
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    min-width: auto;
+    background-color: transparent;
+  }
+  
+  .submenu li {
+    width: 100%;
+  }
+  
+  .submenu a {
+    padding: 0.7rem 1rem !important;
+    font-size: 2.8vw !important;
+    width: 100% !important;
+  }
+  
+  .dropdown-arrow {
+    font-size: 0.8em;
+  }
+  
   /* Logo – wyśrodkowanie */
   .logo-link {
     width: 100%;

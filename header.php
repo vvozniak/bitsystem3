@@ -36,12 +36,29 @@
           'container' => false,
           'menu_class' => 'menu-list',
           'walker' => new class extends Walker_Nav_Menu {
+            function start_lvl(&$output, $depth = 0, $args = null) {
+              $output .= '<ul class="submenu">';
+            }
+            function end_lvl(&$output, $depth = 0, $args = null) {
+              $output .= '</ul>';
+            }
             function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
-              $output .= '<li><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
+              $classes = empty($item->classes) ? array() : (array) $item->classes;
+              $has_children = in_array('menu-item-has-children', $classes);
+              
+              $output .= '<li class="' . ($has_children ? 'has-submenu' : '') . '">';
+              $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title);
+              if ($has_children && $depth == 0) {
+                $output .= ' <span class="dropdown-arrow">▼</span>';
+              }
+              $output .= '</a>';
+            }
+            function end_el(&$output, $item, $depth = 0, $args = null) {
+              $output .= '</li>';
             }
           },
           'fallback_cb' => false,
-          'depth' => 1,
+          'depth' => 2,
         ));
         ?>
       </div>
@@ -54,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu-list');
   const links = document.querySelectorAll('.menu-list a');
+  const hasSubmenuItems = document.querySelectorAll('.has-submenu');
 
   if (toggle && menu) {
     toggle.addEventListener('click', function() {
@@ -61,13 +79,64 @@ document.addEventListener('DOMContentLoaded', function() {
       toggle.classList.toggle('active');
     });
 
-    // Zamykanie po kliknięciu w link
+    // Zamykanie po kliknięciu w link (bez submenu)
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('active');
-        toggle.classList.remove('active');
-      });
+      if (!link.parentElement.classList.contains('has-submenu')) {
+        link.addEventListener('click', () => {
+          menu.classList.remove('active');
+          toggle.classList.remove('active');
+        });
+      }
     });
   }
+
+  // Obsługa dropdown dla elementów z submenu
+  hasSubmenuItems.forEach(item => {
+    const link = item.querySelector(':scope > a');
+    const submenu = item.querySelector('.submenu');
+    
+    if (link && submenu) {
+      // Desktop: hover
+      item.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 768) {
+          submenu.style.display = 'block';
+        }
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 768) {
+          submenu.style.display = 'none';
+        }
+      });
+      
+      // Mobile/Desktop: click
+      link.addEventListener('click', function(e) {
+        if (submenu) {
+          e.preventDefault();
+          const isOpen = submenu.style.display === 'block';
+          // Close all other submenus
+          document.querySelectorAll('.submenu').forEach(sub => {
+            sub.style.display = 'none';
+          });
+          submenu.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+    }
+  });
+
+  // Zamknij submenu po kliknięciu w link submenu
+  document.querySelectorAll('.submenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu) {
+        menu.classList.remove('active');
+      }
+      if (toggle) {
+        toggle.classList.remove('active');
+      }
+      document.querySelectorAll('.submenu').forEach(sub => {
+        sub.style.display = 'none';
+      });
+    });
+  });
 });
 </script>
