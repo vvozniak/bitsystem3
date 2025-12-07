@@ -7,10 +7,7 @@
 /* Tło pod sekcją osób */
 .kj-dol {
     position: relative;
-    background-image: url('../images/tlo.png'); /* Dodanie zdjęcia w tle */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #fff;
 }
 
 
@@ -51,15 +48,6 @@ font-size: 1.04vw;
             position: relative;
             overflow: hidden;
             background-color: white;
-        }
-
-       
-        
-        .bg-stripes:last-of-type {
-            left: auto;
-            right: 0;
-            top: 50%;
-            height: 50%;
         }
 
         /* --- Kontener dla pojedynczej osoby (wiersza) --- */
@@ -114,12 +102,12 @@ font-size: 1.04vw;
         .michal-row::before {
             content: '';
             position: absolute;
-            left: -5vw;
-            top: -3vw;
-            width: 15vw;
-            height: 15vw;
-            background-color: rgba(11, 160, 216, 0.3);
-            border-radius: 50%;
+            left: calc((100vw - 70vw) / 2 * -1);
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc((100vw - 70vw) / 2 + 15vw);
+            height: 4vw;
+            background-color: #0BA0D8;
             z-index: 1;
         }
         
@@ -140,12 +128,12 @@ font-size: 1.04vw;
         .dorota-row::before {
             content: '';
             position: absolute;
-            right: -5vw;
-            bottom: -3vw;
-            width: 18vw;
-            height: 18vw;
-            background-color: rgba(11, 160, 216, 0.25);
-            border-radius: 50%;
+            right: calc((100vw - 70vw) / 2 * -1);
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc((100vw - 70vw) / 2 + 15vw);
+            height: 4vw;
+            background-color: #0BA0D8;
             z-index: 1;
         }
         
@@ -160,17 +148,6 @@ font-size: 1.04vw;
              margin-right: 5vw; /* Dodaje margines z prawej strony treści */
              margin-left: 0;
         }
-        .michal-row .person-image::after {
-  content: '';
-  position: absolute;
-  left: -190%;
-  bottom: 20%; 
-  width: 300%;
-  height: 65%; 
-  background-color: var(--color-highlight); 
-  z-index: -1;
-  border-radius: 40px;
-}
 
 .what-we-do {
   position: relative;
@@ -280,6 +257,11 @@ font-size: 1.04vw;
 
 
 @media (max-width: 768px) {
+
+.michal-row::before,
+.dorota-row::before {
+    display: none;
+}
 
 .kj-gora {
     margin-left: 6vw;

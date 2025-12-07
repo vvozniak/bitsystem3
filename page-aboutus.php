@@ -122,10 +122,6 @@ $team_members = get_field('aboutus_team_members');
 
     </div>
     <div class="kj-dol">
-        <div class="bg-stripes"></div>
-        <div class="bg-stripes"></div>
-        <div class="bg-globe"></div>
-
         <?php if ($team_members && count($team_members) > 0) : ?>
             <?php foreach ($team_members as $member) : ?>
                 <div class="person-row <?php echo esc_attr($member['row_class']); ?>">

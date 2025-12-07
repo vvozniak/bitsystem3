@@ -672,12 +672,12 @@ html, body {
 
   grid-template-columns: repeat(3, 1fr); 
  
-  grid-template-rows: 20vw 21.92vw; 
+  grid-template-rows: 20vw 21.92vw auto; 
   margin-left: 16.67vw;
   margin-right: 16.67vw;
   gap: 3vw; 
   width: 62.5vw;
-  height: 45.1vw;
+  height: auto;
 }
 
 /* ----------------------------------------------- */
@@ -781,6 +781,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center; /* Wyśrodkowanie tekstu */
+  color: white;
 }
 
 .card-text {
@@ -791,6 +792,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center; /* Wyśrodkowanie tekstu */
+  color: white;
 }
 
 /* Hover animation for offer cards */
@@ -809,8 +811,8 @@ html, body {
 .offer-cta-container-v2 {
   display: flex;
   justify-content: flex-end;
-  margin-top: 2vw; 
-  margin-right: 16.67vw;
+  align-items: flex-start;
+  padding-top: 2vw;
 }
 
 .btn-cta-offer {

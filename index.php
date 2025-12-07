@@ -69,8 +69,31 @@ $template_uri = get_template_directory_uri();
       ?>
       <div style="text-align:center;">
         <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($alt); ?>" class="icon" style="height:5.46vw; margin-bottom:0.5vw;">
+        <?php if ($alt) : ?>
+          <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"><?php echo esc_html($alt); ?></p>
+        <?php endif; ?>
       </div>
       <?php endwhile; ?>
+    </div>
+    <?php else : ?>
+    <!-- Fallback: Domyślne ikony -->
+    <div class="icon-row" style="margin-top:3vw; display:flex; gap:4vw; align-items:center; font-size:1vw; padding-bottom:5.78vw;">
+      <div style="text-align:center;">
+        <img src="<?php echo $template_uri; ?>/images/ikon1.png" alt="Biznes" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Biznes</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="<?php echo $template_uri; ?>/images/ikon2.png" alt="Innowacje" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Innowacje</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="<?php echo $template_uri; ?>/images/ikon3.png" alt="Trendy" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Trendy</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="<?php echo $template_uri; ?>/images/ikon4.png" alt="Kultura" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Kultura</p>
+      </div>
     </div>
     <?php endif; ?>
   </div>
@@ -122,11 +145,44 @@ $template_uri = get_template_directory_uri();
       $icon = get_sub_field('ikonka');
       $link = get_sub_field('link');
     ?>
-    <a href="<?php echo esc_url($link); ?>" aria-label="<?php echo esc_attr($icon['alt'] ?? 'Social Link'); ?>" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
+    <a href="<?php echo esc_url($link); ?>" aria-label="<?php echo esc_attr($icon['alt'] ?? 'Social Link'); ?>" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
       <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?? 'Social Icon'); ?>" 
-           style="width:100%; height:100%; object-fit:cover;">
+           style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
     </a>
     <?php endwhile; ?>
+  </div>
+  <?php else : ?>
+  <!-- Fallback: Domyślne social media -->
+  <div 
+    class="social-icons" 
+    style="
+      position:absolute; 
+      top:30%; 
+      right:0; 
+      transform:translateY(-50%); 
+      z-index:100; 
+      display:flex; 
+      flex-direction:column; 
+      gap:1.2vw;
+      padding-right:3vw;
+    "
+  >
+    <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
+      <img src="<?php echo $template_uri; ?>/images/linkedin.png" alt="LinkedIn" 
+           style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
+    </a>
+    <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
+      <img src="<?php echo $template_uri; ?>/images/facebook.png" alt="Facebook" 
+           style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
+    </a>
+    <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
+      <img src="<?php echo $template_uri; ?>/images/instagram.png" alt="Instagram" 
+           style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
+    </a>
+    <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
+      <img src="<?php echo $template_uri; ?>/images/youtube.png" alt="YouTube" 
+           style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
+    </a>
   </div>
   <?php endif; ?>
 </section>
@@ -413,7 +469,7 @@ function get_card_icon_url($card) {
     </div>
     
     <?php if ($card_1) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-1" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <a href="/oferta" class="offer-card dark-bg card-1" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_1); ?>' alt="<?php echo esc_attr($card_1['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_1['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_1['text']); ?></p>
@@ -421,7 +477,7 @@ function get_card_icon_url($card) {
     <?php endif; ?>
 
     <?php if ($card_2) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-2" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <a href="/oferta" class="offer-card dark-bg card-2" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_2); ?>' alt="<?php echo esc_attr($card_2['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_2['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_2['text']); ?></p>
@@ -429,7 +485,7 @@ function get_card_icon_url($card) {
     <?php endif; ?>
     
     <?php if ($card_3) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-3" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <a href="/oferta" class="offer-card dark-bg card-3" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_3); ?>' alt="<?php echo esc_attr($card_3['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_3['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_3['text']); ?></p>
@@ -437,7 +493,7 @@ function get_card_icon_url($card) {
     <?php endif; ?>
     
     <?php if ($card_4) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-4" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <a href="/oferta" class="offer-card dark-bg card-4" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_4); ?>' alt="<?php echo esc_attr($card_4['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_4['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_4['text']); ?></p>
@@ -445,17 +501,17 @@ function get_card_icon_url($card) {
     <?php endif; ?>
 
     <?php if ($card_5) : ?>
-    <a href="/oferta" class="offer-card light-bg card-5" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <a href="/oferta" class="offer-card light-bg card-5" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_5); ?>' alt="<?php echo esc_attr($card_5['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_5['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_5['text']); ?></p>
     </a>
     <?php endif; ?>
     
-  </div>
-  
-  <div class="offer-cta-container-v2">
-    <a href="/oferta" class="btn-cta-offer">Poznaj nasze usługi</a>
+    <div class="offer-cta-container-v2" style="grid-column: 3; grid-row: 3; display: flex; justify-content: flex-end; align-items: flex-start; padding-top: 2vw;">
+      <a href="/oferta" class="btn-cta-offer">Poznaj nasze usługi</a>
+    </div>
+    
   </div>
 </section>
 
