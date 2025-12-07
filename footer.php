@@ -236,15 +236,15 @@ $bottom_offset = '3vw';
 
 @media (max-width: 768px) {
     .scroll-to-top-btn {
-        width: 44px;
-        height: 44px;
+        width: 56px; /* Powiększony z 44px */
+        height: 56px;
         right: 1.5rem;
         bottom: 1.5rem;
     }
     
     .scroll-to-top-btn svg {
-        width: 18px;
-        height: 18px;
+        width: 24px; /* Powiększony z 18px */
+        height: 24px;
     }
 }
 </style>

@@ -976,16 +976,24 @@ html, body {
 /* ================================================= */
 @media (max-width: 768px) {
   .logos-section {
-    
-    min-height: 10vw; 
+    min-height: 15vw; /* Zwiększone z 10vw aby nie było przycinania */
+    padding: 2vw 0; /* Dodany padding */
   }
 
   .logo-item {
     margin: 0 20px;
+    height: auto !important;
+    max-height: 12vw !important; /* Kontrola wysokości */
   }
   
   .logos-strip {
     animation-duration: 20s; 
+    align-items: center; /* Wyśrodkowanie pionowe */
+  }
+  
+  .logo-item img {
+    max-height: 12vw !important;
+    width: auto !important;
   }
 }
 
@@ -2568,4 +2576,65 @@ html, body {
     padding-top: calc((6vw) * 2) !important;
     padding-bottom: calc((6vw) * 1) !important;
   }
+}
+
+
+/* Footer Mobile Improvements */
+@media (max-width: 768px) {
+    .main-footer {
+    }
+    
+    .footer-content-container {
+    }
+    
+    .footer-col-logo {
+    }
+    
+    .footer-col-logo img {
+    }
+    
+    .footer-col-logo p {
+    }
+    
+    .footer-col-contact h4 {
+    }
+    
+    .footer-col-contact .contact-detail {
+    }
+    
+    .footer-col-contact .contact-detail img {
+    }
+    
+    .footer-bottom-bar {
+    }
+    
+    .footer-links {
+    }
+}
+
+
+/* Mobile Margins Consistency */
+@media (max-width: 768px) {
+    /* Ujednolicenie marginesów bocznych */
+    .hero-content,
+    .masai-section,
+    .offer-section,
+    .approach-section,
+    .realizations-section,
+    .aktualnosci-section,
+    .kim-jestesmy,
+    .contact-section {
+    }
+    
+    /* Wyrównanie tekstu */
+    p, .section-description, .offer-description, .approach-description {
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    /* Zapobieganie sierotom */
+    p, h1, h2, h3, h4, h5, h6 {
+        orphans: 3;
+        widows: 3;
+    }
 }
