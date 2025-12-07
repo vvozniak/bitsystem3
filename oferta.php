@@ -5,6 +5,48 @@
  * 
  * Renderuje wszystkie realizacje w zależności od wybranego typu wizualizacji
  * Typy: hero, highlight, standard
+ * 
+ * =========================================
+ * INSTRUKCJA IMPLEMENTACJI
+ * =========================================
+ * 
+ * 1. IMPORT ACF:
+ *    - W panelu WordPress: Narzędzia > Import
+ *    - Zaimportuj plik: acf-oferta.json
+ *    - Grupa pól zostanie automatycznie przypisana do post_type = 'realizacje'
+ * 
+ * 2. DODAWANIE REALIZACJI:
+ *    - W panelu WordPress przejdź do Realizacje > Dodaj nową
+ *    - Wybierz "Typ sekcji":
+ *      a) Hero (Moja Afryka - Podróż z Masajem) - 8 elementów listy z ikonami
+ *      b) Highlight (Kolej na Kobiety) - 2 zdjęcia, tytuł z highlightem, 4 ikony
+ *      c) Standard (Projekt naprzemiennie) - automatyczny układ lewo/prawo
+ * 
+ * 3. CONDITIONAL LOGIC:
+ *    - Po wyborze typu sekcji, widoczne będą tylko pola dla tego typu
+ *    - Hero: 8 par pól (tekst + ikona), 2 zdjęcia, CTA
+ *    - Highlight: podtytuł, tytuł z highlightem, opis, 4 ikony, 2 zdjęcia, CTA
+ *    - Standard: podtytuł, tytuł z highlightem, 2 opisy, dofinansowanie, zdjęcie, CTA
+ * 
+ * 4. KOLEJNOŚĆ WYŚWIETLANIA:
+ *    - Wszystkie realizacje renderują się w kolejności od najnowszych
+ *    - Standard automatycznie pilnuje układu naprzemiennego (lewo/prawo)
+ * 
+ * 5. UŻYCIE SZABLONU:
+ *    - Stwórz nową stronę w WordPress
+ *    - Wybierz szablon: "Oferta"
+ *    - Strona automatycznie wyświetli wszystkie realizacje
+ * 
+ * =========================================
+ * ODPOWIEDZI NA PYTANIA Z BRIEF'U:
+ * =========================================
+ * 
+ * ✅ Typ Hero: 8 elementów listy - TAK (field_hero_item1_text/icon ... field_hero_item8_text/icon)
+ * ✅ Typ Highlight: 4 ikony - TAK (field_highlight_icon1_image/text ... field_highlight_icon4_image/text)
+ * ✅ Typ Standard: układ i pola jak opisano - TAK (podtytuł, tytuł z highlightem, 2 opisy, dofinansowanie, zdjęcie, CTA)
+ * ✅ Bez repeaterów - TAK (wszystkie pola są indywidualne z Conditional Logic)
+ * ✅ Automatyczny układ lewo/prawo dla Standard - TAK (licznik: $standard_counter)
+ * 
  */
 
 $pageTitle = "Realizacje";
