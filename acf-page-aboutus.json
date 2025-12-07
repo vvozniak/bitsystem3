@@ -23,7 +23,7 @@
             "label": "Hero - Opis",
             "name": "aboutus_hero_description",
             "type": "textarea",
-            "default_value": "Od idei po realizację – wspieramy wydarzenia, które łączą ludzi, inspirują do współpracy \ni otwierają nowe perspektywy rozwoju.",
+            "default_value": "Od idei po realizację – wspieramy wydarzenia, które łączą ludzi, inspirują do współpracy i otwierają nowe perspektywy rozwoju.",
             "instructions": "Opis w sekcji hero"
         },
         {
@@ -149,7 +149,7 @@
             "label": "Co robimy - Tytuł przed highlightem",
             "name": "aboutus_what_title_before",
             "type": "text",
-            "default_value": "Kompleksowa obsługa \nwydarzeń i projektów\n",
+            "default_value": "Kompleksowa obsługa wydarzeń i projektów",
             "instructions": "Tekst przed wyróżnieniem"
         },
         {
@@ -165,7 +165,7 @@
             "label": "Co robimy - Opis",
             "name": "aboutus_what_description",
             "type": "textarea",
-            "default_value": "Wierzymy, że każde wydarzenie to szansa na tworzenie wartości, \ndlatego dbamy o każdy detal – od koncepcji po realizację i komunikację.",
+            "default_value": "Wierzymy, że każde wydarzenie to szansa na tworzenie wartości, dlatego dbamy o każdy detal – od koncepcji po realizację i komunikację.",
             "instructions": "Opis sekcji Co robimy"
         },
         {

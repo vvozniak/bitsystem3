@@ -184,9 +184,9 @@ $team_members = get_field('aboutus_team_members');
 <?php 
 // Get ACF fields for "Co robimy?" section
 $what_subtitle = get_field('aboutus_what_subtitle') ?: 'Co robimy?';
-$what_title_before = get_field('aboutus_what_title_before') ?: 'Kompleksowa obsługa <br>wydarzeń i projektów<br>';
+$what_title_before = get_field('aboutus_what_title_before') ?: 'Kompleksowa obsługa wydarzeń i projektów';
 $what_title_highlight = get_field('aboutus_what_title_highlight') ?: 'międzynarodowych';
-$what_description = get_field('aboutus_what_description') ?: 'Wierzymy, że każde wydarzenie to szansa na tworzenie wartości, <br>dlatego dbamy o każdy detal – od koncepcji po realizację i komunikację.';
+$what_description = get_field('aboutus_what_description') ?: 'Wierzymy, że każde wydarzenie to szansa na tworzenie wartości, dlatego dbamy o każdy detal – od koncepcji po realizację i komunikację.';
 $what_cta_text = get_field('aboutus_what_cta_text') ?: 'Poznaj nasze usługi';
 $what_cta_link = get_field('aboutus_what_cta_link') ?: '#oferta';
 $what_video_mp4 = get_field('aboutus_what_video_mp4');
@@ -227,11 +227,11 @@ $what_video_poster = get_field('aboutus_what_video_poster');
   
   <div class ="text-column">
     <p class="subtitle"><?php echo esc_html($what_subtitle); ?></p>
-    <h2><?php echo wp_kses_post(str_replace('<br>', '<br>', $what_title_before)); ?><span class="highlight">
+    <h2><?php echo nl2br(esc_html($what_title_before)); ?><span class="highlight">
         <?php echo esc_html($what_title_highlight); ?></span>
     </h2>
     <p class="tresc">
-        <?php echo wp_kses_post(str_replace('<br>', '<br>', $what_description)); ?>
+        <?php echo nl2br(esc_html($what_description)); ?>
     </p>
 
     <a href="<?php echo esc_url($what_cta_link); ?>" 
