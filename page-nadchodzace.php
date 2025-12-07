@@ -1,9 +1,9 @@
 
 <?php
 /**
- * Template Name: Projekty (Zrealizowane)
+ * Template Name: Projekty (Nadchodzące)
  * 
- * Renderuje wszystkie ZREALIZOWANE realizacje w zależności od wybranego typu wizualizacji
+ * Renderuje wszystkie NADCHODZĄCE realizacje w zależności od wybranego typu wizualizacji
  * Typy: hero, highlight, standard
  * 
  * =========================================
@@ -34,8 +34,8 @@
  * 
  * 5. UŻYCIE SZABLONU:
  *    - Stwórz nową stronę w WordPress
- *    - Wybierz szablon: "Oferta"
- *    - Strona automatycznie wyświetli wszystkie realizacje
+ *    - Wybierz szablon: "Projekty (Nadchodzące)"
+ *    - Strona automatycznie wyświetli wszystkie nadchodzące realizacje
  * 
  * =========================================
  * ODPOWIEDZI NA PYTANIA Z BRIEF'U:
@@ -155,7 +155,7 @@ get_header(); ?>
 
 
 <?php
-// Pobieranie wszystkich ZREALIZOWANYCH postów typu 'realizacje'
+// Pobieranie wszystkich NADCHODZĄCYCH postów typu 'realizacje'
 $realizacje_query = new WP_Query([
     'post_type'      => 'realizacje',
     'posts_per_page' => -1, // wszystkie
@@ -164,7 +164,7 @@ $realizacje_query = new WP_Query([
     'meta_query'     => [
         [
             'key'     => 'realizacja_status',
-            'value'   => 'zrealizowane',
+            'value'   => 'nadchodzace',
             'compare' => '='
         ]
     ]

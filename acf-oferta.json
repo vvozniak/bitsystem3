@@ -3,6 +3,23 @@
     "title": "Realizacje - Oferta",
     "fields": [
         {
+            "key": "field_realizacja_status",
+            "label": "Status projektu",
+            "name": "realizacja_status",
+            "type": "select",
+            "instructions": "Wybierz czy projekt jest zrealizowany czy nadchodzący",
+            "required": 1,
+            "choices": {
+                "zrealizowane": "Zrealizowany projekt",
+                "nadchodzace": "Nadchodzący projekt"
+            },
+            "default_value": "zrealizowane",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "return_format": "value"
+        },
+        {
             "key": "field_realizacja_type",
             "label": "Typ sekcji",
             "name": "realizacja_type",
