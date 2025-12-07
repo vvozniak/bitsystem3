@@ -73,6 +73,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.menu-list a');
   const hasSubmenuItems = document.querySelectorAll('.has-submenu');
 
+  // Funkcja zamykająca menu i submenu
+  function closeAllMenus() {
+    if (menu) {
+      menu.classList.remove('active');
+    }
+    if (toggle) {
+      toggle.classList.remove('active');
+    }
+    document.querySelectorAll('.submenu').forEach(sub => {
+      sub.style.display = 'none';
+    });
+  }
+
   if (toggle && menu) {
     toggle.addEventListener('click', function() {
       menu.classList.toggle('active');
@@ -82,10 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Zamykanie po kliknięciu w link (bez submenu)
     links.forEach(link => {
       if (!link.parentElement.classList.contains('has-submenu')) {
-        link.addEventListener('click', () => {
-          menu.classList.remove('active');
-          toggle.classList.remove('active');
-        });
+        link.addEventListener('click', closeAllMenus);
       }
     });
   }
@@ -126,17 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Zamknij submenu po kliknięciu w link submenu
   document.querySelectorAll('.submenu a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (menu) {
-        menu.classList.remove('active');
-      }
-      if (toggle) {
-        toggle.classList.remove('active');
-      }
-      document.querySelectorAll('.submenu').forEach(sub => {
-        sub.style.display = 'none';
-      });
-    });
+    link.addEventListener('click', closeAllMenus);
   });
 });
 </script>

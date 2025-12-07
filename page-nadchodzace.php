@@ -34,8 +34,8 @@
  * 
  * 5. UŻYCIE SZABLONU:
  *    - Stwórz nową stronę w WordPress
- *    - Wybierz szablon: "Oferta"
- *    - Strona automatycznie wyświetli wszystkie realizacje
+ *    - Wybierz szablon: "Projekty (Nadchodzące)"
+ *    - Strona automatycznie wyświetli wszystkie nadchodzące realizacje
  * 
  * =========================================
  * ODPOWIEDZI NA PYTANIA Z BRIEF'U:
