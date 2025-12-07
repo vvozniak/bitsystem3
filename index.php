@@ -23,7 +23,7 @@ $template_uri = get_template_directory_uri();
 <?php if ($hero) : 
   $hero_bg_image = $hero['hero_background_image']['url'] ?? $template_uri . '/images/tlo.png';
   $hero_img = $hero['hero_image']['url'] ?? $template_uri . '/images/blok.png';
-  $cta_link = esc_url($hero['hero_cta_link'] ?? '#');
+  $cta_link = esc_url($hero['hero_cta_link'] ?? '/oferta');
 ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:-40px;">
   <img 
@@ -133,7 +133,7 @@ $template_uri = get_template_directory_uri();
 <?php endif; ?>
 
 <?php if ($about) : 
-  $about_cta_link = esc_url($about['about_cta_link'] ?? '#');
+  $about_cta_link = esc_url($about['about_cta_link'] ?? '/o-nas');
 ?>
 <section class="kim-jestesmy" style="background-color:white; color:#0f172a; padding:3.33vw 0;">
   <div style="width:100%;  margin:0 auto; padding:0 16.66vw; overflow:hidden;">
@@ -413,49 +413,49 @@ function get_card_icon_url($card) {
     </div>
     
     <?php if ($card_1) : ?>
-    <div class="offer-card dark-bg card-1">
+    <a href="/oferta" class="offer-card dark-bg card-1" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_1); ?>' alt="<?php echo esc_attr($card_1['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_1['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_1['text']); ?></p>
-    </div>
+    </a>
     <?php endif; ?>
 
     <?php if ($card_2) : ?>
-    <div class="offer-card dark-bg card-2">
+    <a href="/oferta" class="offer-card dark-bg card-2" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_2); ?>' alt="<?php echo esc_attr($card_2['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_2['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_2['text']); ?></p>
-    </div>
+    </a>
     <?php endif; ?>
     
     <?php if ($card_3) : ?>
-    <div class="offer-card dark-bg card-3">
+    <a href="/oferta" class="offer-card dark-bg card-3" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_3); ?>' alt="<?php echo esc_attr($card_3['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_3['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_3['text']); ?></p>
-    </div>
+    </a>
     <?php endif; ?>
     
     <?php if ($card_4) : ?>
-    <div class="offer-card dark-bg card-4">
+    <a href="/oferta" class="offer-card dark-bg card-4" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_4); ?>' alt="<?php echo esc_attr($card_4['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_4['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_4['text']); ?></p>
-    </div>
+    </a>
     <?php endif; ?>
 
     <?php if ($card_5) : ?>
-    <div class="offer-card light-bg card-5">
+    <a href="/oferta" class="offer-card light-bg card-5" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_5); ?>' alt="<?php echo esc_attr($card_5['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_5['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_5['text']); ?></p>
-    </div>
+    </a>
     <?php endif; ?>
     
   </div>
   
   <div class="offer-cta-container-v2">
-    <a href="#" class="btn-cta-offer">Poznaj nasze usługi</a>
+    <a href="/oferta" class="btn-cta-offer">Poznaj nasze usługi</a>
   </div>
 </section>
 
@@ -622,7 +622,7 @@ $get_img_alt = fn($img, $default = 'Image') => is_array($img) && !empty($img['al
       <p class="realizations-subtitle">Z pasją do perfekcji</p>
       <h2 class="realizations-title">Nasze <span>Realizacje</span></h2>
     </div>
-    <a href="/realizacje" class="btn-realizations-cta">Zobacz wszystkie</a>
+    <a href="/zrealizowane-projekty" class="btn-realizations-cta">Zobacz wszystkie projekty</a>
   </div>
 
   <div class="realizations-grid">

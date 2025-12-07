@@ -193,7 +193,7 @@ $what_title_before = get_field('aboutus_what_title_before') ?: 'Kompleksowa obs�
 $what_title_highlight = get_field('aboutus_what_title_highlight') ?: 'międzynarodowych';
 $what_description = get_field('aboutus_what_description') ?: 'Wierzymy, że każde wydarzenie to szansa na tworzenie wartości, dlatego dbamy o każdy detal – od koncepcji po realizację i komunikację.';
 $what_cta_text = get_field('aboutus_what_cta_text') ?: 'Poznaj nasze usługi';
-$what_cta_link = get_field('aboutus_what_cta_link') ?: '#oferta';
+$what_cta_link = get_field('aboutus_what_cta_link') ?: '/oferta';
 $what_video_mp4 = get_field('aboutus_what_video_mp4');
 $what_video_webm = get_field('aboutus_what_video_webm');
 $what_video_poster = get_field('aboutus_what_video_poster');
@@ -241,7 +241,7 @@ $what_video_poster = get_field('aboutus_what_video_poster');
 
     <a href="<?php echo esc_url($what_cta_link); ?>" 
            class="cta-btn"
-           style="display:inline-block; background:white; color:black; font-family:'Inter', sans-serif; font-size:1.25vw; font-weight:500; padding:1vw 2.5vw; border-radius:10px;">
+           style="display:inline-block; background:white; color:black; font-family:'Inter', sans-serif; font-size:1.25vw; font-weight:500; padding:1vw 2.5vw; border-radius:10px; text-decoration: none;">
         <?php echo esc_html($what_cta_text); ?>    
     </a>
   </div>

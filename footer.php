@@ -190,6 +190,88 @@ $bottom_offset = '3vw';
     
 </footer>
 
+<!-- Przycisk powrotu do góry -->
+<button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Powrót do góry">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 19L12 5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/>
+    </svg>
+</button>
+
+<style>
+.scroll-to-top-btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    background-color: #0BA0D8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0988b8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top-btn {
+        width: 44px;
+        height: 44px;
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+    
+    .scroll-to-top-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+    // Pokaż/ukryj przycisk w zależności od pozycji scrolla
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('active');
+        } else {
+            scrollToTopBtn.classList.remove('active');
+        }
+    });
+    
+    // Obsługa kliknięcia - płynne przewinięcie do góry
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

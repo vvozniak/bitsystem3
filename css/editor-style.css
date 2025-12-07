@@ -587,6 +587,10 @@ video {
     }
 }
 
+.visible {
+    visibility: visible;
+}
+
 .fixed {
     position: fixed;
 }
@@ -699,6 +703,10 @@ video {
 
 .justify-center {
     justify-content: center;
+}
+
+.border {
+    border-width: 1px;
 }
 
 .border-b {

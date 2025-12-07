@@ -179,7 +179,10 @@ $hero_background = get_field('offer_hero_background_image');
                 $icon_url = get_template_directory_uri().'/images/'.$b['icon'];
             }
             
-            echo '<div class="kafelek" style="
+            // Check if card has a link field, otherwise link to offer page
+            $card_link = isset($b['link']) && !empty($b['link']) ? esc_url($b['link']) : '/oferta';
+            
+            echo '<a href="'.$card_link.'" class="kafelek" style="
                 float:left;
                 width:calc('.$card_width.' - '.$margin.');
                 height:'.$height.';
@@ -192,17 +195,20 @@ $hero_background = get_field('offer_hero_background_image');
                 display:flex;
                 flex-direction:column;
                 justify-content:space-between;
-            ">';
+                text-decoration:none;
+                cursor:pointer;
+                transition:transform 0.3s ease, box-shadow 0.3s ease;
+            " onmouseover="this.style.transform=\'translateY(-5px)\'; this.style.boxShadow=\'0 8px 20px rgba(0,0,0,0.2)\'" onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'none\'">';
 
             echo '<div style="display:flex;align-items:flex-start;margin-bottom:1vw;">';
             if ($icon_url) {
                 echo '<img src="'.esc_url($icon_url).'" alt="'.esc_attr($card_title).'" style="width:3.5vw;height:3.5vw;object-fit:contain;margin-right:1.5vw;">';
             }
-            echo '<h3 style="font-size:1.25vw;font-weight:600;line-height:1.3;">'.esc_html($card_title).'</h3>';
+            echo '<h3 style="font-size:1.25vw;font-weight:600;line-height:1.3;color:white;">'.esc_html($card_title).'</h3>';
             echo '</div>';
 
-            echo '<p style="font-size:1.04vw;font-weight:400;line-height:1.5;opacity:0.9;">'.esc_html($card_description).'</p>';
-            echo '</div>';
+            echo '<p style="font-size:1.04vw;font-weight:400;line-height:1.5;opacity:0.9;color:white;">'.esc_html($card_description).'</p>';
+            echo '</a>';
 
             // Naprzemienne ustawienie lewej/prawej
             if ($i % 2 == 1) echo '<div style="clear:both;"></div>';
@@ -213,7 +219,7 @@ $hero_background = get_field('offer_hero_background_image');
 
     <?php 
     $cta_text = get_field('offer_cta_text') ?: 'Zobacz nasze realizacje';
-    $cta_link = get_field('offer_cta_link') ?: '#realizacje';
+    $cta_link = get_field('offer_cta_link') ?: '/zrealizowane-projekty';
     ?>
     <div style="text-align:center;margin-top:4vw;">
         <a href="<?php echo esc_url($cta_link); ?>" style="display:inline-block;background:#0BA0D8;color:white;font-family:'Inter',sans-serif;font-size:1.25vw;font-weight:500;padding:1vw 2.5vw;border-radius:10px;text-decoration:none;"><?php echo esc_html($cta_text); ?></a>

@@ -104,18 +104,47 @@ document.addEventListener('DOMContentLoaded', function() {
   hasSubmenuItems.forEach(item => {
     const link = item.querySelector(':scope > a');
     const submenu = item.querySelector('.submenu');
+    let hoverTimeout = null;
     
     if (link && submenu) {
-      // Desktop: hover
+      // Desktop: hover z opóźnieniem przy zamykaniu
       item.addEventListener('mouseenter', function() {
         if (window.innerWidth > 768) {
+          // Anuluj timeout zamykania jeśli istnieje
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+          }
+          submenu.style.display = 'block';
+        }
+      });
+      
+      // Obsługa hover na submenu - utrzymaj otwarte
+      submenu.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 768) {
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+          }
           submenu.style.display = 'block';
         }
       });
       
       item.addEventListener('mouseleave', function() {
         if (window.innerWidth > 768) {
-          submenu.style.display = 'none';
+          // Opóźnienie zamykania - daje czas na przejście myszy do submenu
+          hoverTimeout = setTimeout(function() {
+            submenu.style.display = 'none';
+          }, 200); // 200ms opóźnienia
+        }
+      });
+      
+      // Zamykanie przy opuszczeniu submenu
+      submenu.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 768) {
+          hoverTimeout = setTimeout(function() {
+            submenu.style.display = 'none';
+          }, 200);
         }
       });
       
@@ -126,7 +155,9 @@ document.addEventListener('DOMContentLoaded', function() {
           const isOpen = submenu.style.display === 'block';
           // Close all other submenus
           document.querySelectorAll('.submenu').forEach(sub => {
-            sub.style.display = 'none';
+            if (sub !== submenu) {
+              sub.style.display = 'none';
+            }
           });
           submenu.style.display = isOpen ? 'none' : 'block';
         }

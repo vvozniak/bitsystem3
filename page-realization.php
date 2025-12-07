@@ -225,7 +225,7 @@ $pageTitle = "Oferta";
                 ?>
             </div>
 
-            <a href="#" 
+            <a href="/oferta" 
                 class="cta-btn"
                 style="
                     display:inline-block; 
@@ -312,7 +312,7 @@ $pageTitle = "Oferta";
         </div>
         </div>
 
-        <a href="#oferta" class="kobiety-btn">Dowiedz się więcej</a>
+        <a href="/oferta" class="kobiety-btn">Dowiedz się więcej</a>
       </div>
     </div>
 
@@ -456,7 +456,7 @@ $pageTitle = "Oferta";
                 Dofinansowanie z UE: 50 000,00 zł
             </p>
 
-            <a href="#" 
+            <a href="/oferta" 
                class="cta-btn"
                style="
                     display:inline-block; 
@@ -466,7 +466,7 @@ $pageTitle = "Oferta";
                     font-size:1.25vw; 
                     font-weight:500; 
                     padding:1vw 2.5vw; 
-                    border-radius:5px;
+                    border-radius: 10px;
                     text-decoration: none;
                 ">
                 Dowiedz się więcej    
@@ -594,7 +594,7 @@ $text_padding_offset = '0.8vw';
                 Dofinansowanie z UE: 50 000,00 zł
             </p>
 
-            <a href="#" 
+            <a href="/oferta" 
                class="cta-btn"
                style="
                     display:inline-block; 
@@ -604,8 +604,7 @@ $text_padding_offset = '0.8vw';
                     font-size:1.25vw; 
                     font-weight:500; 
                     padding:1vw 2.5vw; 
-                    
-                    border-radius:40px;
+                    border-radius: 10px;
                     text-decoration: none;
                 ">
                 Dowiedz się więcej    

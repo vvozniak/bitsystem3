@@ -557,6 +557,9 @@ video {
         max-width: 1440px;
     }
 }
+.visible {
+    visibility: visible;
+}
 .fixed {
     position: fixed;
 }
@@ -642,6 +645,9 @@ video {
 }
 .justify-center {
     justify-content: center;
+}
+.border {
+    border-width: 1px;
 }
 .border-b {
     border-bottom-width: 1px;
