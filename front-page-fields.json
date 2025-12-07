@@ -1,0 +1,116 @@
+{
+    "key": "group_front_page",
+    "title": "Strona główna",
+    "fields": [
+        {
+            "key": "field_hero",
+            "label": "Hero",
+            "name": "hero",
+            "type": "group",
+            "sub_fields": [
+                {"key": "field_hero_main_text","label":"Główny tekst","name":"hero_main_text","type":"text"},
+                {"key": "field_hero_title","label":"Tytuł","name":"hero_title","type":"text"},
+                {"key": "field_hero_description","label":"Opis","name":"hero_description","type":"textarea"},
+                {"key": "field_hero_cta_text","label":"CTA tekst","name":"hero_cta_text","type":"text"},
+                {"key": "field_hero_cta_link","label":"CTA link","name":"hero_cta_link","type":"url"},
+                {"key": "field_hero_background_image","label":"Tło hero","name":"hero_background_image","type":"image","return_format":"array"},
+                {"key": "field_hero_image","label":"Obraz hero","name":"hero_image","type":"image","return_format":"array"},
+                {
+                    "key": "field_hero_icons",
+                    "label":"Ikony",
+                    "name":"hero_icons",
+                    "type":"repeater",
+                    "sub_fields":[
+                        {"key":"field_hero_icon_image","label":"Ikona","name":"ikonka","type":"image","return_format":"array"},
+                        {"key":"field_hero_icon_alt","label":"Alt","name":"alt","type":"text"}
+                    ]
+                },
+                {
+                    "key":"field_hero_social_links",
+                    "label":"Social links",
+                    "name":"hero_social_links",
+                    "type":"repeater",
+                    "sub_fields":[
+                        {"key":"field_hero_social_icon","label":"Ikona","name":"ikonka","type":"image","return_format":"array"},
+                        {"key":"field_hero_social_link","label":"Link","name":"link","type":"url"}
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_about",
+            "label": "Kim jesteśmy",
+            "name": "about",
+            "type": "group",
+            "sub_fields":[
+                {"key":"field_about_subtitle","label":"Podtytuł","name":"about_subtitle","type":"text"},
+                {"key":"field_about_title","label":"Tytuł","name":"about_title","type":"text"},
+                {"key":"field_about_description","label":"Opis","name":"about_description","type":"textarea"},
+                {"key":"field_about_cta_text","label":"CTA tekst","name":"about_cta_text","type":"text"},
+                {"key":"field_about_cta_link","label":"CTA link","name":"about_cta_link","type":"url"},
+                {"key":"field_about_image","label":"Obraz","name":"about_image","type":"image","return_format":"array"}
+            ]
+        },
+        {
+            "key":"field_masai",
+            "label":"Masai",
+            "name":"masai",
+            "type":"group",
+            "sub_fields":[
+                {"key":"field_masai_super_heading","label":"Super nagłówek","name":"masai_super_heading","type":"text"},
+                {"key":"field_masai_title","label":"Tytuł","name":"masai_title","type":"text"},
+                {"key":"field_masai_description","label":"Opis","name":"masai_description","type":"textarea"},
+                {"key":"field_masai_main_image","label":"Tło sekcji","name":"masai_main_image","type":"image","return_format":"array"},
+                {"key":"field_masai_small_image","label":"Mały obraz","name":"masai_small_image","type":"image","return_format":"array"},
+                {
+                    "key":"field_masai_icons",
+                    "label":"Ikony",
+                    "name":"masai_icons",
+                    "type":"repeater",
+                    "sub_fields":[
+                        {"key":"field_masai_icon_image","label":"Ikona","name":"ikona","type":"image","return_format":"array"},
+                        {"key":"field_masai_icon_description","label":"Opis","name":"opis","type":"text"}
+                    ]
+                },
+                {"key":"field_masai_cta_text","label":"CTA tekst","name":"masai_cta_text","type":"text"},
+                {"key":"field_masai_cta_link","label":"CTA link","name":"masai_cta_link","type":"url"}
+            ]
+        },
+        {
+            "key":"field_stats",
+            "label":"Statystyki",
+            "name":"stats_items",
+            "type":"repeater",
+            "sub_fields":[
+                {"key":"field_stat_number","label":"Liczba","name":"number","type":"text"},
+                {"key":"field_stat_description","label":"Opis","name":"description","type":"text"},
+                {"key":"field_stat_icon","label":"Ikona (opcjonalnie)","name":"icon","type":"image","return_format":"array"}
+            ]
+        },
+        {
+            "key":"field_offer",
+            "label":"Oferta",
+            "name":"offer",
+            "type":"group",
+            "sub_fields":[
+                {"key":"field_offer_left_subtitle","label":"Lewy podtytuł","name":"offer_left_subtitle","type":"text"},
+                {"key":"field_offer_left_title","label":"Lewy tytuł","name":"offer_left_title","type":"text"},
+                {"key":"field_offer_left_description","label":"Lewy opis","name":"offer_left_description","type":"textarea"},
+                {
+                    "key":"field_offer_cards",
+                    "label":"Karty oferty",
+                    "name":"offer_cards",
+                    "type":"repeater",
+                    "sub_fields":[
+                        {"key":"field_card_icon","label":"Ikona","name":"icon","type":"image","return_format":"array"},
+                        {"key":"field_card_title","label":"Tytuł","name":"title","type":"text"},
+                        {"key":"field_card_text","label":"Tekst","name":"text","type":"textarea"}
+                    ]
+                }
+            ]
+        }
+    ],
+    "location":[
+        [{"param":"page_template","operator":"==","value":"front-page.php"}]
+    ]
+}

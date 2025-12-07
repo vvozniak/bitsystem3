@@ -1,84 +1,52 @@
-.pricing-section {
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-    padding: 50px 20px;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
-.pricing-container {
+/* --- MENU GŁÓWNE (desktop) --- */
+nav .menu {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.pricing-card {
-    background: #111;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
-    text-align: left;
-}
-
-.pricing-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 16px;
-    color: #aaa;
-}
-
-.price {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.price span {
-    font-size: 14px;
-    color: #bbb;
-}
-
-.choose-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: #3b82f6;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.choose-btn:hover {
-    background: #2563eb;
-}
-
-.features, .package-details {
-    margin-top: 20px;
-    padding: 0;
+    gap: 2.5vw;             /* odstępy między elementami */
     list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;    /* nie łamie tekstu na drugą linię */
 }
 
-.features li, .package-details li {
-    margin-bottom: 8px;
-    font-size: 14px;
+nav .menu li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-hr {
-    margin: 15px 0;
-    border: 0.5px solid #444;
+nav .menu li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1vw;          /* dopasuj, np. 16px = 0.83vw przy 1920px szerokości */
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;     /* też dla bezpieczeństwa */
+}
+
+nav .menu li a:hover {
+    color: #2563eb; /* lekki niebieski przy hover */
+}
+
+/* --- OSTATNI LINK (np. „Skontaktuj się”) --- */
+nav .menu li:last-child a {
+    background-color: #3b82f6; /* niebieski */
+    color: white;
+    padding: 0.7vw 1.8vw;
+    border-radius: 9999px; /* pełne zaokrąglenie */
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --- LOGO + MENU wrapper --- */
+nav .flex.items-center.bg-white {
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+nav .flex.items-center.bg-white > a img {
+    display: block;
+    height: auto;
 }

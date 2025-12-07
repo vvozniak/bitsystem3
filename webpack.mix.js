@@ -1,6 +1,5 @@
 let mix = require('laravel-mix');
 let path = require('path');
-let postCss = require('@tailwindcss/postcss');
 
 mix.setResourceRoot('../');
 mix.setPublicPath(path.resolve('./'));
@@ -15,16 +14,16 @@ mix.webpackConfig({
 
 mix.js('resources/js/app.js', 'js');
 
-mix.postCss("resources/css/app.css", "css", postCss);
+mix.postCss("resources/css/app.css", "css");
 
-mix.postCss("resources/css/editor-style.css", "css", postCss);
+mix.postCss("resources/css/editor-style.css", "css");
 
 // mix.browserSync({
 //     proxy: 'http://tailpress.test',
 //     host: 'tailpress.test',
 //     open: 'external',
-//     port: 8000,
-//     files: ["*.php", "**/*.php"]
+//     port: 8000
+//     injectChanges: true
 // });
 
 if (mix.inProduction()) {
@@ -32,3 +31,9 @@ if (mix.inProduction()) {
 } else {
     mix.options({ manifest: false });
 }
+
+
+
+
+
+

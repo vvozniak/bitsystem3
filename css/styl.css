@@ -1,0 +1,2411 @@
+/* Ogólne style */
+.body-custom {
+    background: #fff;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* HEADER */
+.site-header {
+  background: transparent;
+  color: black;
+  padding-top: 0.833vw;
+  padding-bottom: 0.833vw;
+  position: relative;
+  z-index: 9999;
+  margin-bottom: 5.89vw;
+}
+/* Container */
+.container-header {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* NAV */
+.nav-main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+/* BIAŁA KAPSUŁA MENU */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 9999px;
+  width: 67.91vw;
+  height: 5.83vw;
+  gap: 1.25vw;
+  padding: 0 2vw;
+  box-sizing: border-box;
+  position: relative;
+}
+/* Wymuszenie wyrównania */
+.nav-inner > * {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/* LOGO */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  height: 4.16vw;
+  width: auto;
+  object-fit: contain;
+}
+/* LISTA MENU */
+.menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.04vw;
+  white-space: nowrap;
+  height: 100%;
+}
+/* ELEMENTY LISTY */
+.menu-list li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* LINKI */
+.menu-list a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7vw;
+  padding: 0 1.25vw;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+/* :small_blue_diamond: Ostatni link – przycisk */
+.menu-list li:last-child a {
+  background-color: #0BA0D8;
+  color: #fff;
+  width: 10.45vw;
+  height: 2.7vw;
+  border-radius: 9999px;
+  padding: 0;
+}
+/* --- WERSJA MOBILNA --- */
+@media (max-width: 768px) {
+  /* Biała kapsuła – trochę przestrzeni i cień */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    height: auto;
+    padding: 1.5rem 1.25rem 2rem;
+    border-radius: 1.5rem;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  /* Przycisk hamburgera / zamknięcia */
+  .menu-toggle {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    z-index: 1100; /* wyżej niż reszta */
+  }
+  /* Wyrównanie ikon X */
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    margin: 6px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  /* Animacja zamknięcia (X) */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  /* Menu list — lepsze rozmieszczenie i odstęp od logo */
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem; /* odstęp od góry kapsuły */
+    text-align: left;
+    height: auto;
+  }
+  .menu-list.active {
+    display: flex;
+  }
+  .menu-list li {
+    width: 100%;
+  }
+  .menu-list a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 3vw;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+  }
+  .menu-list a:hover {
+    background-color: #f5f5f5;
+  }
+  /* Przycisk ostatni */
+  .menu-list li:last-child a {
+    background-color: #0BA0D8;
+    color: #fff;
+    text-align: center;
+    font-size: 3vw;
+    width: 110%;
+    margin-bottom: 2vw;
+    height: auto;
+  }
+  /* Logo – wyśrodkowanie */
+  .logo-link {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .logo-img {
+    height: 8vw;
+  }
+}
+
+/* --- WERSJA DESKTOPOWA --- */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+  .menu-list {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.masai-section {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 3.66vw;
+  background-color: #fff; /* białe tło */
+  overflow: visible; /* pozwól, by pseudo-element wychodził poza padding */
+}
+
+/* prawa kolumna z białym tłem i grafiką w tle */
+.masai-right {
+  position: relative;
+  flex: 1;
+  display: flex;
+  margin-top: 5.833vw;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: 44.58vw;
+  z-index: 2;
+  background-color: transparent; /* nie zasłania tła sekcji */
+}
+
+/* obrazek dekoracyjny ZA tekstem po prawej */
+.masai-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -2vw; /* wysuń nieco poza sekcję */
+  width: 55vw; /* szerokość tła – możesz dopasować */
+  height: 100%;
+  background: 
+    url('<?php echo get_template_directory_uri(); ?>/images/bg-masai.png') 
+    no-repeat right center;
+  background-size: contain;
+  opacity: 0.35; /* przezroczystość, żeby nie zasłaniał tekstu */
+  z-index: 0; /* tło za wszystkim */
+}
+
+
+/* Lewa kolumna - duże zdjęcie */
+.masai-left {
+  flex-shrink: 0; /* Zapobiega zmniejszaniu się lewej kolumny */
+  width: 50%; /* Ustal konkretną szerokość */
+  flex-basis: 35vw;
+  margin-top: 1.3vw;
+  margin-bottom: 3.38vw;
+}
+
+.masai-left img {
+  width: auto;
+  height: 35.41vw;
+  object-fit: cover;
+  border-radius: 20px; /
+  
+}
+
+/* Prawa kolumna - treść */
+.masai-right {
+  flex: 1; 
+  display: flex;
+  margin-top: 5.833vw;
+  flex-direction: column;
+  justify-content: flex-start; 
+  flex-basis: 44.58vw;
+ 
+}
+
+/* Nagłówek "Eventy kulturowe" */
+.masai-super-heading {
+  font-size: 1.67vw; /* Mały rozmiar */
+  font-weight: 300;
+  font-family: 'Manrope' , sans-serif;
+ 
+  margin-bottom: 5px;
+}
+
+/* Główny tytuł */
+.masai-right h2 {
+  font-size: 1.88vw; /* Większy rozmiar */
+  font-weight: 600;
+  margin-bottom: 1.82vw;
+  line-height: 100%;
+  font-family: 'Manrope' , sans-serif;
+}
+
+/* Opis */
+.masai-description {
+  font-size: 1.04vw;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans' , sans-serif;
+  margin-bottom: 3.177vw;
+  max-width: 100%; /* Ograniczenie szerokości tekstu, aby nie był za długi */
+}
+
+/* Kontener małego obrazka i ikon */
+.masai-content-block {
+  display: flex;
+  align-items: center; /* Wyśrodkowanie w pionie */
+  gap: 2.03vw; /* Odstęp między obrazkiem a ikonami */
+  margin-bottom: 3.38vw;
+}
+
+/* Kontener małego obrazka - dla stylizacji krawędzi/cienia */
+.masai-small-image-container {
+  flex-shrink: 0;
+  /* Możesz tu dodać tło w kształcie dymka/kółka, jeśli jest potrzebne */
+}
+
+.masai-small {
+  width: auto; /* Stały rozmiar dla małego obrazka */
+  height: 18.95vw;
+  object-fit: cover;
+  border-radius: 10px; 
+  display: block;
+}
+
+/* Kontener dla ikon */
+.masai-icons {
+  display: flex;
+  flex-direction: column; /* Ułożenie w kolumnie, aby elementy były jeden pod drugim */
+  gap: 15px; /* Odstęp między poszczególnymi elementami ikon */
+  margin-top: 1.3vw;
+}
+
+.masai-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25vw;
+  font-size: 1.04vw;
+  font-weight: 400;
+}
+
+/* Obrazki ikon */
+.masai-icon-item img {
+  width: 3.125vw; /* Stały rozmiar dla obrazu ikony */
+  height: 3.125vw;
+  object-fit: contain;
+}
+
+.btn-cta {
+  /* Ta jedna właściwość zapobiegnie rozciąganiu przycisku na całą szerokość kolumny */
+  align-self: flex-start; 
+}
+
+/* --- WERSJA MOBILNA SEKCJI MASAI --- */
+@media (max-width: 768px) {
+
+  .masai-section {
+    display: block;               /* Układ pionowy */
+    width: 100% !important;
+    padding: 5vw 4vw;
+    margin: 0 !important;
+    background-color: #fff;
+    box-sizing: border-box !important;
+    text-align: left !important;  /* wyrównanie do lewej */
+  }
+
+  /* 🔹 Ukrycie dużego zdjęcia */
+  .masai-left {
+    display: none !important;
+  }
+
+  /* 🔹 Prawa kolumna zajmuje całość */
+  .masai-right {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  /* 🔹 Nagłówki i tekst – 4× większe czcionki */
+  .masai-super-heading {
+    font-size: 6vw !important;  /* z 1.67 → ~x4 */
+    margin-bottom: 2vw !important;
+    text-align: left !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .masai-right h2 {
+    font-size: 7.5vw !important; /* z 1.88 → ~x4 */
+    margin-bottom: 5vw !important;
+    line-height: 1.1em !important;
+    text-align: left !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .masai-description {
+    font-size: 4vw !important;
+    line-height: 1.6em !important;
+    margin: 0 0 6vw 0 !important;
+    text-align: left !important;     /* teraz wyrównanie do lewej */
+    display: block !important;
+    width: 100% !important;          /* pełna szerokość */
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🔹 Obrazek i ikony w pionie */
+  .masai-content-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4vw !important;
+    margin-bottom: 6vw !important;
+    width: 100% !important;
+  }
+
+  .masai-small {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  .masai-icons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 3vw !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .masai-icon-item {
+    font-size: 4vw !important;
+    gap: 3vw !important;
+    align-items: center !important;
+    display: flex !important;
+  }
+
+  .masai-icon-item img {
+    width: 8vw !important;
+    height: 8vw !important;
+  }
+
+  /* 🔹 Przycisk CTA */
+  .btn-cta {
+    font-size: 4vw !important;
+    padding: 3.5vw 6vw !important;
+    border-radius: 12px !important;
+    margin-top: 4vw !important;
+    display: inline-block !important;
+  }
+}
+
+
+@media (max-width: 576px) {
+    .stats-section {
+        height: auto !important; 
+        padding: 6vw 0; /* trochę więcej miejsca */
+    }
+
+    .stats-content {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-around !important;
+        gap: 5vw; /* większe odstępy */
+    }
+
+    .stat-item {
+        flex: 0 0 45% !important; 
+        margin-bottom: 5vw !important;
+        text-align: center;
+    }
+
+    .stat-item h3 {
+        font-size: 12vw !important; /* większe liczby */
+        margin-bottom: 3vw !important;
+    }
+
+    .stat-item p {
+        font-size: 4vw !important; /* większy opis */
+        line-height: 1.4;
+        padding: 0 2vw;
+    }
+
+    .stat-item img {
+        height: 20vw !important; /* większa ikona */
+        margin-bottom: 3vw !important;
+    }
+
+    .stat-item .stat-icon-wrapper {
+        height: auto !important;
+    }
+}
+
+
+
+
+
+/* ================================================= */
+/* OSTATECZNA POPRAWKA: KOMPLETNY CSS DLA SEKCJI OFERT (3x2) */
+/* ================================================= */
+
+/* Definicje kolorów i czcionek */
+:root {
+  --color-dark: #000C32;
+  --color-light: #0BA0D8;
+  --color-highlight: #0BA0D882;
+  --font-manrope: 'Manrope', sans-serif;
+  --font-plex: 'IBM Plex Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* KLUCZOWE: Zapobiega poziomym paskom przewijania */
+html, body {
+  overflow-x: hidden; 
+}
+
+/* ================================================= */
+/* 1. GŁÓWNA SEKCJA I SIATKA (Układ 3x2) */
+/* ================================================= */
+.offer-section-v4 {
+  background-color: white; /* Białe tło całej sekcji */
+  max-width: 100%;
+ 
+  padding: 3vw 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-grid-v4 {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr); 
+ 
+  grid-template-rows: 20vw 21.92vw; 
+  margin-left: 16.67vw;
+  margin-right: 16.67vw;
+  gap: 3vw; 
+  width: 62.5vw;
+  height: 45.1vw;
+}
+
+/* ----------------------------------------------- */
+/* 2. BLOK OPISU */
+.offer-left-box-v2 {
+  /* Domyślna pozycja (1,1) */
+  background-color: transparent; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20vw; 
+}
+
+.offer-subtitle {
+  font-family: var(--font-manrope);
+  font-size: 1.67vw;
+  font-weight: 300;
+  color: #000000;
+  margin-bottom: 0.5vw;
+}
+
+.offer-title {
+  font-family: var(--font-manrope);
+  font-size: 1.88vw; 
+  font-weight: 600;
+  
+  color: var(--color-dark); 
+}
+
+
+.offer-description {
+  font-family: var(--font-plex);
+  font-size: 1.04vw; 
+  font-weight: 400;
+  color: #4A4A4A;
+}
+
+/* Efekt zakreślenia */
+.offer-title .highlighted-word {
+  display: inline-block;
+  padding: auto 0.5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.offer-title .highlighted-word::after {
+  content: '';
+  position: absolute;
+  left: -190%;
+  bottom: 20%; 
+  width: 300%;
+  height: 65%; 
+  background-color: var(--color-highlight); 
+  z-index: -1;
+  border-radius: 40px;
+}
+
+/* ----------------------------------------------- */
+/* 3. KARTY W SIATCE (Style wspólne) */
+/* ----------------------------------------------- */
+.offer-card {
+  padding: 1vw;
+  border-radius: 20px;
+  color: white;
+  height: 20vw; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dark-bg {
+  background-color: var(--color-dark); 
+}
+
+.light-bg {
+  background-color: var(--color-light);
+}
+
+.card-icon {
+  height: 5.2vw; 
+  width: auto;
+  margin-bottom: 2.187vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  font-family: var(--font-manrope);
+  font-size:1.25vw; 
+  font-weight: 600;
+  margin-bottom: 1.25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card-text {
+  font-family: var(--font-plex);
+  font-size: 1.04vw;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5vw;
+
+}
+
+
+/* ----------------------------------------------- */
+/* 4. PRZYCISK (offer-cta-container-v2)  */
+/* ----------------------------------------------- */
+.offer-cta-container-v2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2vw; 
+  margin-right: 16.67vw;
+}
+
+.btn-cta-offer {
+  display: inline-block;
+  font-family: var(--font-inter);
+  font-size: 1.25vw;
+  font-weight:600;
+  color: #333;
+  background: white;
+  padding: 0.625vw 1.66vw 0.625vw 1.66vw;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  transition: background 0.3s;
+}
+
+
+
+
+/* --- TABLETY (max 992px) --- */
+@media (max-width: 992px) {
+  .offer-section-v4 {
+    padding: 4vw 5vw;
+  }
+
+  .offer-grid-v4 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 3vw;
+    width: 90vw;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .offer-left-box-v2, .offer-card {
+    height: auto;
+    padding: 4vw;
+  }
+
+  .offer-title { font-size: 7.5vw; }       /* x4 */
+  .offer-subtitle { font-size: 6.7vw; }    /* x4 */
+  .offer-description,
+  .card-text { font-size: 4.2vw; }         /* x4 */
+  .card-title { font-size: 5vw; }          /* x4 */
+  .card-icon { height: 20vw; }             /* większe na tablet */
+  .btn-cta-offer { font-size: 5vw; padding: 2.5vw 5vw; }
+  .offer-cta-container-v2 { margin-right: 5vw; }
+}
+
+/* --- TELEFONY (max 576px) --- */
+@media (max-width: 768px) {
+  .offer-grid-v4 {
+    grid-template-columns: 1fr;
+    gap: 5vw;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .offer-left-box-v2, .offer-card {
+    grid-column: span 1 !important;
+    padding: 5vw;
+  }
+
+  /* 🔹 CZCIONKI x4 */
+  .offer-title { font-size: 7.52vw; }       /* desktop 1.88vw x4 */
+  .offer-subtitle { font-size: 6.68vw; }    /* desktop 1.67vw x4 */
+  .offer-description,
+  .card-text { font-size: 4.16vw; }         /* desktop 1.04vw x4 */
+  .card-title { font-size: 5.2vw; }         /* desktop 1.3vw x4 */
+
+  .card-icon { height: 15vw; }             /* proporcjonalnie większe */
+  
+  /* 🔹 Przycisk */
+  .btn-cta-offer {
+    font-size: 4.16vw;                      /* desktop 1.04vw x4 */
+    padding: 3vw 6vw;
+  }
+
+  .offer-cta-container-v2 {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  /* LOGO STRIP */
+  .logos-strip-container {
+    overflow-x: auto;
+    padding: 2vw 5vw;
+  }
+
+  .logos-strip {
+    display: flex;
+    gap: 5vw;
+    width: max-content;
+  }
+
+  .logo-item {
+    height: 10vw !important; /* skalowanie logo */
+  }
+}
+
+
+
+
+/* ================================================= */
+/* SEKCJA Z LOGO PARTNERÓW (NIE ZATRZYMUJE SIĘ I INLINE HEIGHT) */
+/* ================================================= */
+.logos-section {
+  background-color: white; 
+  min-height: 5.7292vw; 
+  
+  height: 5.72vw; 
+  
+  padding: 0; 
+  
+  /* Centrowanie paska logo w pionie */
+  display: flex;
+  align-items: center;
+  
+  overflow: hidden; 
+ 
+}
+
+.logos-strip-container {
+  max-width: 1400px; 
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+.logos-strip {
+  display: flex;
+  white-space: nowrap; 
+  width: max-content; 
+  animation: scroll-logos 30s linear infinite; 
+}
+
+.logo-item {
+
+  width: auto;     
+  
+ 
+  margin: 0 40px; 
+  
+  object-fit: contain; 
+  flex-shrink: 0; 
+  opacity: 0.8; 
+  transition: opacity 0.3s;
+}
+
+/* ================================================= */
+/* DEFINICJA ANIMACJI */
+/* ================================================= */
+@keyframes scroll-logos {
+  from {
+    transform: translateX(0); 
+  }
+  to {
+    transform: translateX(-50%); 
+  }
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+@media (max-width: 768px) {
+  .logos-section {
+    
+    min-height: 10vw; 
+  }
+
+  .logo-item {
+    margin: 0 20px;
+  }
+  
+  .logos-strip {
+    animation-duration: 20s; 
+  }
+}
+
+
+
+
+
+
+:root {
+  --accent: #0BA0D882;
+  --dark: #000C32;
+}
+
+/* SEKCJA */
+.approach-section {
+  width: 100%;
+  padding: 5vw ;
+  
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.approach-row-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.approach-tlo {
+  float: left;
+  width: 16.66%;
+}
+
+.approach-left {
+  float: left; /* zamiast float: center */
+  width: 50%;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  color: var(--dark);
+  
+}
+
+.approach-right {
+  float: left; 
+  width: 32.33%;
+  box-sizing: border-box;
+  text-align: right;
+  margin-left: 1%;
+  margin-top: 6vw;
+}
+
+
+.approach-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* TEKSTY */
+.approach-subtitle {
+  font-size: 1.25vw;
+  font-weight: 400;
+  color: #868686;
+  margin-bottom: 0.8vw;
+}
+
+.approach-title {
+  font-size: 2.8vw;
+  font-weight: 700;
+  margin-bottom: 1.8vw;
+}
+
+.approach-description {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.45vw;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2.2vw;
+  width: 44.27vw; 
+}
+
+/* WIERSZ TEKST + OBRAZEK */
+.highlight-row {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  
+}
+
+
+.approach-highlight-text {
+  float: left;
+  width: 24.8vw;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.0.4vw;
+  line-height: 1.6;
+  color: black;
+  margin-top: 11.17vw;
+}
+
+
+.highlighted-word1 {
+  position: relative;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+  z-index: 0;
+  font-size: 1.25vw;
+}
+
+.highlighted-word1::after {
+  content: '';
+  position: absolute;
+  left: -1%;
+  bottom: 0.15vw;
+  width: 170%;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 2vw;
+  z-index: -5;
+}
+
+
+
+
+
+
+/* MAŁA GRAFIKA (OBOK TEKSTU) */
+.img-small {
+  float: right;
+  width: 18.95vw;
+  height: 18.95vw;
+  border-radius: 1vw;
+  z-index: 2;
+}
+
+/* DUŻA GRAFIKA */
+.img-large {
+  height: 35.41vw;
+  width: auto;
+  border-radius: 1.2vw;
+
+  z-index: 2;
+}
+@media (max-width: 576px) {
+
+  .approach-left,
+  .approach-right {
+    float: none;       /* usuwa float */
+    width: 100% !important; /* pełna szerokość */
+    text-align: left;
+    display: block;
+    margin: 0;         /* usuwa marginesy */
+    box-sizing: border-box;
+  }
+
+  .approach-description,
+  .approach-highlight-text {
+    width: 100% !important;  /* zajmuje całą szerokość */
+    font-size: 4.2vw;        /* już skalowane w mobilce */
+    line-height: 1.6;
+  }
+  
+
+  /* Ukrycie małej grafiki */
+  .img-small {
+    display: none;
+  }
+
+  /* Duża grafika */
+  .img-large {
+    width: 100%;      
+    height: auto;
+    margin: 0;
+    display: block;
+  }
+
+  .highlighted-word1 {
+    font-size: 4.2vw;
+  }
+}
+
+
+
+:root {
+  --realization-dark: #000C32;
+  --realization-blue: #0BA0D8;
+  --realization-gray-text: #666;
+}
+
+/* ================================================= */
+/* SEKCJA NAJNOWSZE REALIZACJE */
+/* ================================================= */
+
+.realizations-section {
+  padding: 5vw 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* --- NAGŁÓWEK I CTA --- */
+.realizations-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3vw;
+  padding: 0 1vw;
+  margin-left: 16.67vw;
+  margin-right: 16.67vw;
+}
+
+.realizations-text-col {
+  max-width: 60%;
+}
+
+.realizations-subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.66vw;
+  font-weight: 300;
+  color: var(--realization-gray-text);
+}
+
+.realizations-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.875vw;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--realization-dark);
+}
+
+.realizations-title span {
+  background-color: rgba(11, 160, 216, 0.5);
+  border-radius: 50px;
+  padding: 0.2vw 0.8vw;
+}
+
+/* --- PRZYCISK --- */
+.btn-realizations-cta {
+  display: inline-block;
+  background-color: var(--realization-blue);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25vw;
+  font-weight: 600;
+  padding: 0.625vw 1.66vw;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-realizations-cta:hover {
+  background-color: #0792c5;
+}
+
+/* --- SIATKA KART --- */
+.realizations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  margin-left: 16.67vw;
+  margin-right: 16.67vw;
+}
+
+.realization-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 20vw; /* zachowuje proporcje */
+  height: 0;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.realization-card:hover {
+  transform: translateY(-0.5vw);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Obraz tła */
+.realization-card .card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+
+.realization-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* Overlay z gradientem */
+.realization-card .card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15% 10% 8% 10%;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  box-sizing: border-box;
+}
+
+.realization-card .card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.04vw;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  text-decoration: none;
+}
+
+.realization-card .card-title span {
+  background-color: rgba(11, 160, 216, 0.6);
+  border-radius: 50px;
+  padding: 0.2vw 0.8vw;
+}
+
+/* ================================================= */
+/* RESPONSYWNOŚĆ */
+/* ================================================= */
+@media (max-width: 576px) {
+  .realizations-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 5vw;
+  }
+  .realizations-text-col {
+    max-width: 100%;
+  }
+  .realizations-subtitle {
+    font-size: 6.64vw;
+  }
+  .realizations-title {
+    font-size: 7.5vw;
+    line-height: 1.2;
+  }
+  .btn-realizations-cta {
+    font-size: 5vw;
+    padding: 3vw 5vw;
+    border-radius: 16px;
+  }
+  .realizations-grid {
+    grid-template-columns: 1fr;
+    gap: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .realization-card {
+    padding-bottom: 60%;
+    border-radius: 16px;
+  }
+  .realization-card .card-overlay {
+    padding: 10% 10% 8% 10%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  }
+  .realization-card .card-title {
+    font-size: 4.16vw;
+    line-height: 1.4;
+  }
+}
+.realizations-section .card-title span {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+
+
+/* --- WERSJA MOBILNA: SEKCA „KIM JESTEŚMY” --- */
+@media (max-width: 768px) {
+
+  /* Kontener sekcji */
+  .kim-jestesmy {
+    padding: 10vw 5vw !important;
+  }
+
+  /* Główny wewnętrzny div */
+  .kim-jestesmy > div {
+    padding: 0 5vw !important;
+    overflow: visible !important;
+  }
+
+  /* Kolumna z tekstem */
+  .kim-jestesmy div[style*="float:left"] {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /* Nagłówek mały */
+  .kim-jestesmy h3 {
+    font-size: 6vw !important; 
+    line-height: 1.2 !important;
+    margin-bottom: 2vw !important;
+  }
+
+  /* Główny tytuł */
+  .kim-jestesmy h2 {
+    font-size: 8vw !important; 
+    line-height: 1.1 !important;
+    margin-bottom: 6vw !important;
+  }
+
+  /* Opis */
+  .kim-jestesmy h3[style*="IBM Plex Sans"] {
+    font-size: 4vw !important; 
+    line-height: 1.7 !important;
+    margin-bottom: 6vw !important;
+  }
+
+  /* Span z tłem */
+  .kim-jestesmy h2 span {
+    display: inline-block !important;
+    width: auto !important;
+    padding: 1vw 2vw !important;
+    font-size: inherit !important;
+    background-color: #0BA0D8 !important;
+    color: #fff !important;
+    border-radius: 25px !important;
+  }
+
+  /* 🔹 Przycisk CTA */
+  .kim-jestesmy .btn-cta {
+    font-size: 4vw !important;       
+    padding: 3.5vw 6vw !important;   
+    border-radius: 12px !important;  
+    display: inline-block !important; 
+    margin-top: 4vw !important;      
+  }
+}
+
+
+
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 32vw 0; 
+    }
+
+    .contact-content-container {
+        flex-direction: column;
+        gap: 20vw; 
+        margin: 0 5vw;
+    }
+
+    /* Lewa kolumna - formularz */
+    .contact-form-column {
+        max-width: 100%;
+    }
+
+    /* Tytuły */
+    .contact-title span {
+        font-size: 6.68vw; 
+    }
+
+    .contact-title .contact-title-highlight {
+        font-size: 7.5vw; 
+        padding: 0.8vw 4vw;
+    }
+
+    /* Opis */
+    .contact-description {
+        font-size: 4.16vw;
+        margin-top: 6.88vw; 
+        margin-bottom: 12vw; 
+    }
+    /* Pola formularza */
+    .contact-form-column input,
+    .contact-form-column textarea {
+        font-size: 3.76vw; 
+        padding: 3.2vw 0; 
+        margin-bottom: 5.2vw; 
+    }
+
+    /* Checkbox */
+    .contact-consent {
+        font-size: 2.5vw; 
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vw;
+    }
+
+    .contact-consent input {
+        width: 4.8vw; 
+        height: 4.8vw; 
+        margin-top: 0;
+        margin-right: 4vw; 
+
+    /* Przycisk */
+    .contact-section button {
+        font-size: 5vw; 
+        padding: 4vw 10vw; 
+    }
+
+    /* Prawa kolumna - info kontaktowe */
+    .contact-info-block {
+        max-width: 100%;
+        padding: 12vw; 
+        border-radius: 80px; 
+    }
+
+    .contact-info-block h3 {
+        font-size: 5.84vw; 
+        margin-bottom: 12vw; 
+    }
+
+    .contact-info-block .contact-detail,
+    .contact-info-block .contact-detail-address {
+        font-size: 5vw; 
+        padding: 6vw;
+        margin-bottom: 8vw; 
+    }
+
+    .contact-info-block .contact-social-icons a {
+        width: 10vw; 
+        height: 10vw; 
+    }
+
+    .contact-info-block img {
+        width: 6vw; 
+        height: 6vw; 
+        margin-right: 6vw;
+    }
+}
+
+}
+
+@media (max-width: 768px) {
+  /* Układ pionowy, pełna szerokość, wyrównanie do lewej */
+  .hero-content {
+    margin: 0 !important;
+    padding: 10vw 6vw !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ukrycie grafiki */
+  .hero-image {
+    display: none !important;
+  }
+
+  /* Duże czcionki ×4 */
+  .text-main {
+    font-size: calc(2vw * 4) !important; 
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .text-title {
+    font-size: calc(3.2vw * 4) !important; 
+    text-align: left !important;
+  }
+
+  .text-highlight {
+    background: none !important; 
+    color: white !important;
+    font-weight: 800 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+  }
+
+  .text-desc {
+    font-size: calc(1.25vw * 4) !important;
+    line-height: 1.6 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8vw 0 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  /* 🔹 Przycisk CTA – wyśrodkowany */
+  .cta-btn {
+    font-size: calc(1.25vw * 4) !important; 
+    padding: 3vw 6vw !important;
+    border-radius: 2vw !important;
+    display: block !important;            /* blok, żeby można go centrować */
+    margin: 4vw auto 0 auto !important;   /* auto po bokach = środek */
+    text-align: center !important;        /* tekst w przycisku też wyśrodkowany */
+  }
+
+  /* 🔹 Ikony ×4 – wyśrodkowane */
+  .icon-row {
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* WYŚRODKOWANE */
+    gap: 8vw !important;
+    padding-bottom: 10vw !important;
+  }
+
+  .icon {
+    height: calc(5.46vw * 3) !important;
+    width: auto !important;
+  }
+
+  /* Ukryj social media na mobile */
+  .social-icons {
+    display: none !important;
+  }
+}
+
+
+
+.contact-section {
+    padding: 8vw 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #F8F8F8;
+}
+.contact-content-container {
+    margin: 0 16.67vw;
+    display: flex;
+    gap: 5vw;
+    align-items: flex-start;
+}
+.contact-form-column {
+    flex: 1;
+    max-width: 60%;
+}
+.contact-title {
+    font-family: 'Manrope', sans-serif;
+    color: #000C32;
+}
+.contact-title-sub {
+    font-size: 1.67vw;
+    font-weight: 300;
+    display: block;
+    line-height: 1.2;
+}
+.contact-title-highlight {
+    background-color: #0BA0D8;
+    color: white;
+    padding: 0.2vw 1vw;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: inline-block;
+    margin-left: 0.5vw;
+    font-size: 1.875vw;
+}
+.contact-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.04vw;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #444;
+    max-width: 90%;
+    margin-top: 1.72vw;
+    margin-bottom: 3vw;
+}
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    padding: 0.8vw 0;
+    margin-bottom: 1.3vw;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 0.94vw;
+    outline: none;
+    color: #333;
+    resize: none;
+}
+.contact-consent {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2vw;
+    font-size: 0.625vw;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.4;
+    color: #777;
+}
+.contact-consent input {
+    margin-top: 0.3vw;
+    margin-right: 1vw;
+    width: 1.2vw;
+    height: 1.2vw;
+}
+.contact-btn {
+    background-color: #0BA0D8;
+    color: white;
+    padding: 1vw 2.5vw;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.25vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-btn:hover {
+    background-color: #0889b9;
+}
+/* Prawa kolumna */
+.contact-info-block {
+    flex: 1;
+    max-width: 40%;
+    background-color: #000C32;
+    color: white;
+    padding: 3vw;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+.contact-info-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.46vw;
+    font-weight: 600;
+    margin-bottom: 3vw;
+}
+.contact-detail,
+.contact-detail-address {
+    display: flex;
+    align-items: center;
+    background-color: rgba(11, 160, 216, 0.2);
+    padding: 1.5vw;
+    border-radius: 8px;
+    margin-bottom: 2vw;
+}
+.contact-detail img {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-right: 1.5vw;
+    filter: brightness(0) invert(1) opacity(0.8) hue-rotate(170deg);
+}
+.contact-detail-text {
+    font-size: 1.25vw;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.contact-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+.contact-social-icons a {
+    display: block;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* :mobile_phone: RESPONSYWNOŚĆ */
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 32vw 0;
+    }
+    .contact-content-container {
+        flex-direction: column;
+        gap: 20vw;
+        margin: 0 5vw;
+        align-items: center;
+    }
+    .contact-form-column {
+        max-width: 100%;
+    }
+    .contact-title-sub {
+        font-size: 6.68vw;
+
+    }
+    .contact-detail-text {
+    font-size: 5vw;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+   
+}
+    .contact-title-highlight {
+        font-size: 7.5vw;
+        padding: 0.8vw 4vw;
+    }
+    .contact-description {
+        font-size: 4.16vw;
+        margin-top: 6.88vw;
+        margin-bottom: 12vw;
+        max-width: 100%;
+    }
+    .contact-input,
+    .contact-textarea {
+        font-size: 3.76vw;
+        padding: 3.2vw 0;
+        margin-bottom: 5.2vw;
+    }
+    .contact-consent {
+        font-size: 2.5vw;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vw;
+    }
+    .contact-consent input {
+        width: 4.8vw;
+        height: 4.8vw;
+        margin-right: 4vw;
+    }
+    .contact-btn {
+        font-size: 5vw;
+        padding: 4vw 10vw;
+    }
+    .contact-info-block {
+        max-width: 100%;
+        padding: 12vw;
+        border-radius: 80px;
+        text-align: center;
+    }
+    .contact-info-title {
+        font-size: 5.84vw;
+        margin-bottom: 12vw;
+    }
+    .contact-detail,
+    .contact-detail-address {
+        font-size: 5vw;
+        padding: 6vw;
+        margin-bottom: 8vw;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-detail img {
+        width: 6vw;
+        height: 6vw;
+        margin-right: 0;
+        margin-bottom: 4vw;
+    }
+    .contact-social-icons {
+        justify-content: center;
+        gap: 6vw;
+    }
+    .contact-social-icons a {
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --accent: #0BA0D882;
+  --dark: #000C32;
+}
+
+.kobiety-section {
+  width: 100%;
+  padding: 5vw;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.kobiety-tlo {
+  float: left;
+  width: 16.66%;
+  margin-left: -3vw; /* figura lekko wystaje na lewo */
+}
+
+.kobiety-figura {
+  width: 100%;
+  height: 21.9vw;
+  object-fit: contain;
+  display: block;
+}
+
+/* TEKST ŚRODKOWY */
+.kobiety-left {
+  float: left;
+  width: 44.58vw;
+  font-family: 'Manrope', sans-serif;
+  color: var(--dark);
+  margin-left: 2%;
+  z-index: 10;
+}
+
+.kobiety-right {
+  float: right;
+  width: 32%;
+  text-align: right;
+  margin-top: 0; /* żeby grafika była na tej samej wysokości co tekst */
+  z-index: 20;
+}
+
+.kobiety-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* TEKSTY */
+.kobiety-subtitle {
+  font-size: 1.67vw;
+  font-weight: 400;
+  color: #868686;
+  margin-bottom: 0.8vw;
+}
+
+.kobiety-title {
+  font-size: 1.88vw;
+  font-weight: 600;
+  margin-bottom: 1.8vw;
+}
+
+.kobiety-description {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.04vw;
+  width: 45.57vw;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2.2vw;
+}
+
+/* IKONY */
+.kobiety-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+  margin-bottom: 2.5vw;
+}
+
+.kobiety-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.04vw;
+  font-weight: 400;
+  color: black;
+}
+
+.kobiety-icon-item img {
+  width: 3.125vw;
+  height: 3.125vw;
+  object-fit: contain;
+}
+
+/* PRZYCISK */
+.kobiety-btn {
+  display: inline-block;
+  background: #0BA0D8;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.937vw;
+  font-weight: 500;
+  padding: 12px 35px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.kobiety-btn:hover {
+  background: #0888ba;
+}
+
+/* PODŚWIETLENIE SŁOWA */
+.highlighted-word {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.875vw;
+  color: white;
+  z-index: 1;
+}
+
+.highlighted-word::after {
+  content: '';
+  position: absolute;
+  left: -3%;
+  bottom: 0;
+  width: 600%;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 2vw;
+  
+}
+
+/* OBRAZ PO PRAWEJ */
+.kobiety-img {
+  height: 21.9vw;
+  width: 37.18vw;
+  border-radius: 1.2vw;
+  object-fit: cover;
+  display: block;
+  z-index: 5;
+  margin-left: 0.1vw;
+}
+
+
+
+/* ============================= */
+/*     RESPONSYWNOŚĆ - MOBILE    */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* SEKCJA OFFER */
+  .offer-section {
+    padding: 20vw 0;
+  }
+  
+  .offer-section .section-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .offer-section .section-title {
+    font-size: 7.52vw;
+  }
+
+  .offer-section .section-description {
+    font-size: 4.16vw;
+    line-height: 1.6;
+  }
+
+  .offer-grid {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .offer-block {
+    width: 100% !important;
+    height: auto !important;
+    padding: 8vw !important;
+    margin-bottom: 8vw !important;
+    border-radius: 4vw !important;
+  }
+
+  .offer-block h3 {
+    font-size: 5vw !important;
+  }
+
+  .offer-block p {
+    font-size: 4.16vw !important;
+  }
+
+  .offer-block img {
+    width: 14vw !important;
+    height: 14vw !important;
+    margin-right: 5vw !important;
+  }
+
+  .cta-btn {
+    font-size: 5vw !important;
+    padding: 4vw 8vw !important;
+    border-radius: 4vw !important;
+  }
+
+  /* LOGA */
+  .logos-section .logo-item {
+    height: auto !important;
+    max-height: 20vw !important;
+    margin: 0 6vw;
+  }
+
+  .logos-strip {
+    gap: 6vw;
+  }
+
+  /* APPROACH */
+  .approach-container {
+    display: block !important;
+    padding: 10vw 5vw;
+  }
+
+  .approach-left,
+  .approach-right {
+    width: 100% !important;
+    float: none;
+    text-align: left;
+  }
+
+  .approach-tlo img,
+  .img-large,
+  .img-small {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .approach-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .approach-title {
+    font-size: 7.52vw !important;
+  }
+
+  .approach-description,
+  .approach-highlight-text {
+    font-size: 4.16vw !important;
+    line-height: 1.7;
+  }
+
+  
+
+  .highlighted-word {
+    font-size: 7.5vw !important;
+  }
+
+  .highlighted-word::after {
+    border-radius: 6vw !important;
+  }
+}
+
+
+
+/* ============================= */
+/*    RESPONSYWNOŚĆ - MOBILE     */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* --- REALIZATION SECTION --- */
+  .realization-section {
+    padding: 10vw 0 15vw !important;
+  }
+
+  .realization-section .section-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .realization-section .section-title {
+    font-size: 7.52vw !important;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
+  .realization-section .section-description {
+    font-size: 4.16vw !important;
+    line-height: 1.6;
+  }
+
+  .realization-section .event-details-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 90% !important;
+  }
+
+  .realization-section .photo-column,
+  .realization-section .info-column,
+  .realization-section .small-graphic-col {
+    width: 100% !important;
+    position: static !important;
+    margin: 0 0 10vw 0 !important;
+    padding: 0 !important;
+  }
+
+  .realization-section img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4vw !important;
+  }
+
+  .realization-section .event-title {
+    font-size: 7.52vw !important;
+    margin-bottom: 2vw !important;
+  }
+
+  .realization-section .event-title span {
+    font-size: 8.8vw !important;
+  }
+
+  .realization-section .event-desc {
+    font-size: 4.16vw !important;
+    margin-bottom: 6vw !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4vw !important;
+  }
+
+  .feature-item {
+    font-size: 4vw !important;
+  }
+
+  .feature-item img {
+    width: 8vw !important;
+    height: 8vw !important;
+    margin-right: 4vw !important;
+  }
+
+  .realization-section .cta-btn {
+    font-size: 5vw !important;
+    padding: 4vw 8vw !important;
+    border-radius: 4vw !important;
+  }
+
+  /* --- KOBIETY SECTION --- */
+  .kobiety-section {
+    padding: 10vw 5vw !important;
+  }
+
+  .kobiety-tlo {
+    display: none !important;
+  }
+
+  .kobiety-left,
+  .kobiety-right {
+    float: none !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .kobiety-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .kobiety-title {
+    font-size: 7.52vw !important;
+  }
+
+  .kobiety-description {
+    font-size: 4.16vw !important;
+    width: 100% !important;
+  }
+
+  .kobiety-icons {
+    flex-wrap: wrap;
+    gap: 4vw !important;
+  }
+
+  .kobiety-icon-item {
+    font-size: 4.16vw !important;
+    gap: 4vw !important;
+  }
+
+  .kobiety-icon-item img {
+    width: 12vw !important;
+    height: 12vw !important;
+  }
+
+  .kobiety-btn {
+    font-size: 3.75vw !important;
+    padding: 4vw 10vw !important;
+    border-radius: 4vw !important;
+  }
+
+  .kobiety-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4vw !important;
+    margin-top: 10vw;
+  }
+
+  .highlighted-word {
+    font-size: 7.5vw !important;
+  }
+
+  .highlighted-word::after {
+    border-radius: 6vw !important;
+  }
+
+  /* --- SENIOR PROJECT SECTION --- */
+  .senior-project-section {
+    padding: 13vw 5vw !important;
+  }
+
+  .senior-container {
+    flex-direction: column !important;
+    gap: 10vw !important;
+  }
+
+  .senior-container .photo-column,
+  .senior-container .info-column {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .senior-project-section img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4vw !important;
+  }
+
+  .project-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .project-title {
+    font-size: 7.52vw !important;
+  }
+
+  .project-description {
+    font-size: 4.16vw !important;
+  }
+
+  .project-funding {
+    font-size: 4.5vw !important;
+  }
+
+  .senior-project-section .cta-btn {
+    font-size: 5vw !important;
+    padding: 4vw 8vw !important;
+    border-radius: 4vw !important;
+  }
+
+  /* --- MŁODY DUCH SECTION --- */
+  .mlody-duch-section {
+    padding: 15vw 5vw !important;
+  }
+
+  .mlody-duch-container {
+    flex-direction: column !important;
+    gap: 10vw !important;
+  }
+
+  .mlody-duch-container .info-column,
+  .mlody-duch-container .photo-column {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .mlody-duch-section img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4vw !important;
+  }
+
+  .mlody-duch-section .project-subtitle {
+    font-size: 6.68vw !important;
+  }
+
+  .mlody-duch-section .project-title {
+    font-size: 7.52vw !important;
+  }
+
+  .mlody-duch-section .project-description {
+    font-size: 4.16vw !important;
+  }
+
+  .mlody-duch-section .project-funding {
+    font-size: 4.5vw !important;
+  }
+
+  .mlody-duch-section .cta-btn {
+    font-size: 5vw !important;
+    padding: 4vw 8vw !important;
+    border-radius: 4vw !important;
+  }
+  .realizations-section .program{
+    font-size: 5vw;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .aktualnosci-section {
+    padding: 12vw 0 !important;
+  }
+
+  .aktualnosci-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .figure-column {
+    display: none !important;
+  }
+
+  .content-column {
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .articles-grid-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9.76vw !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    left: auto !important;
+    position: relative !important;
+  }
+
+  .grid-item {
+    width: 87.88vw !important;
+    height: 87.88vw !important;
+    min-width: 87.88vw !important;
+    min-height: 87.88vw !important;
+    border-radius: 3vw !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  .grid-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .item-content {
+    width: 100% !important;
+    padding: 4vw !important;
+  }
+
+  .item-title {
+    font-size: 4.2vw !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .section-title {
+    font-size: 7.52vw !important;
+    text-align: center !important;
+    margin-bottom: 6vw !important;
+  }
+
+  .section-description {
+    font-size: 4.16vw !important;
+    line-height: 1.8 !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    margin: 0 auto 10vw !important;
+  }
+
+  .navigation-controls {
+    margin-top: 12vw !important;
+    gap: 4vw !important;
+  }
+
+  .nav-arrow {
+    font-size: 8vw !important;
+    padding: 0 3vw !important;
+  }
+
+  .dot {
+    width: 2.8vw !important;
+    height: 2.8vw !important;
+    margin: 0 1.2vw !important;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 24vw 0 !important;
+  }
+
+  .contact-container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    max-width: 94vw !important;
+    margin: 0 auto !important;
+    gap: 8vw !important;
+  }
+
+  .spacer-column {
+    display: none !important;
+  }
+
+  .content-column {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+  }
+
+  .contact-subtitle {
+    font-size: 6.68vw !important;
+    margin-bottom: 4vw !important;
+  }
+
+  .contact-title {
+    font-size: 7.52vw !important;
+    margin-bottom: 8vw !important;
+    line-height: 1.1 !important;
+  }
+
+  .contact-title span {
+    font-size: 7.52vw !important;
+    padding: 0.4vw 3.2vw !important;
+  }
+
+  .contact-description {
+    font-size: 4.16vw !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+    margin-bottom: 8vw !important;
+  }
+
+  .map-contact-section {
+    padding: 16vw 0 4vw !important;
+  }
+
+  .contact-cards-container {
+    flex-direction: column !important;
+    gap: 6vw !important;
+    align-items: center !important;
+    max-width: 94vw !important;
+    margin: 0 auto 6vw !important;
+  }
+
+  .contact-card {
+    width: 90vw !important;
+    padding: 4vw !important;
+    border-radius: 4vw !important;
+    box-shadow: 0 2vw 6vw rgba(0,0,0,0.06) !important;
+  }
+
+  .contact-card img {
+    width: 18vw !important;
+    height: 18vw !important;
+    margin-right: 4vw !important;
+    border-radius: 50% !important;
+  }
+
+  .card-details p:first-child {
+    font-size: 4.4vw !important;
+    margin-bottom: 1.6vw !important;
+    font-weight: 700 !important;
+  }
+
+  .card-details p:nth-child(2),
+  .card-details p:nth-child(3) {
+    font-size: 4vw !important;
+    margin-bottom: 1.6vw !important;
+    color: #868686 !important;
+  }
+
+    .map-area {
+    height: 80vw !important; 
+    padding: 0 !important;
+  }
+
+  .map-area img {
+    height: 80vw !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .contact-section,
+  .map-contact-section {
+    padding-top: calc((6vw) * 2) !important;
+    padding-bottom: calc((6vw) * 1) !important;
+  }
+}
