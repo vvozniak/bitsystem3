@@ -221,7 +221,7 @@ function cpt_loga_klientow_init() {
         'labels'             => $labels,
         'public'             => true,
         'has_archive'        => false,
-        'show_in_rest'       => true,
+        'show_in_rest'       => false,
         'menu_position'      => 6,
         'menu_icon'          => 'dashicons-images-alt2',
         'supports'           => ['title', 'thumbnail'],

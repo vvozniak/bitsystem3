@@ -247,8 +247,7 @@ if ($logos_query->have_posts()) {
             $logos[] = [
                 'url' => $logo_image['url'],
                 'alt' => $logo_alt ?: get_the_title(),
-                'link' => $logo_link,
-                'height' => !empty($logo_image['height']) ? $logo_image['height'] : 100
+                'link' => $logo_link
             ];
         }
     }
@@ -340,12 +339,12 @@ if (!empty($logos)) :
             <img src="<?php echo esc_url($approach_background['url']); ?>" 
                alt="<?php echo esc_attr($approach_background['alt'] ?: ''); ?>" 
                class="img-figura"
-              style="height= 34.23vw">
+              style="height: 34.23vw">
           <?php else : ?>
             <img src="<?php echo get_template_directory_uri(); ?>/images/Group 1.png" 
                alt="12" 
                class="img-figura"
-              style="height= 34.23vw">
+              style="height: 34.23vw">
           <?php endif; ?>
 
     
