@@ -80,19 +80,19 @@ $template_uri = get_template_directory_uri();
     <div class="icon-row" style="margin-top:3vw; display:flex; gap:4vw; align-items:center; font-size:1vw; padding-bottom:5.78vw;">
       <div style="text-align:center;">
         <img src="<?php echo $template_uri; ?>/images/ikon1.png" alt="Biznes" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Biznes</p>
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
         <img src="<?php echo $template_uri; ?>/images/ikon2.png" alt="Innowacje" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Innowacje</p>
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
         <img src="<?php echo $template_uri; ?>/images/ikon3.png" alt="Trendy" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Trendy</p>
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
         <img src="<?php echo $template_uri; ?>/images/ikon4.png" alt="Kultura" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;">Kultura</p>
+        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
     </div>
     <?php endif; ?>
@@ -199,7 +199,7 @@ $template_uri = get_template_directory_uri();
         <?php echo esc_html($about['about_subtitle']); ?>
       </h3>
       
-      <h2 style="font-size:2.19vw; font-family:'Manrope', sans-serif; font-weight:600; margin-bottom:2.19vw; line: height 100%;">
+      <h2 style="font-size:2.19vw; font-family:'Manrope', sans-serif; font-weight:600; margin-bottom:2.19vw; line-height: 1.2;">
         <?php 
           // Wyszukiwanie frazy do podświetlenia, zakładam, że to ostatnia fraza
           $title_text = esc_html($about['about_title']);
@@ -207,11 +207,23 @@ $template_uri = get_template_directory_uri();
           
           if (strpos($title_text, $last_phrase) !== false) {
               $parts = explode($last_phrase, $title_text);
-              echo $parts[0];
-              echo '<span style="display: inline-block; position: relative; padding: 0 0.5vw; z-index: 1; width: 170%; background-color: #0BA0D882; border-radius: 40px; color:#fff;">' . $last_phrase . '</span>';
+              // Dodajemy niełamalną spację przed "i" i używamy span z white-space: nowrap dla fragmentu "wydarzeń i"
+              $before_text = $parts[0];
+              // Jeśli tekst kończy się na "wydarzeń i ", to opakowujemy "wydarzeń i" w span z white-space: nowrap (BEZ niebieskiego tła)
+              if (preg_match('/(.*?)(wydarzeń\s+i\s*)$/', $before_text, $matches)) {
+                  echo $matches[1];
+                  echo '<span class="no-wrap-text" style="white-space: nowrap;">' . $matches[2] . '</span>';
+              } else {
+                  // Fallback: niełamalna spacja przed "i"
+                  $before_text = str_replace(' i ', '&nbsp;i ', $before_text);
+                  echo $before_text;
+              }
+              // Tylko "współpracy międzynarodowej" ma niebieskie tło - dodajemy klasę highlighted-text
+              echo '<br class="mobile-break"><span class="highlighted-text" style="display: inline-block; position: relative; padding: 0 0.5vw; z-index: 1; width: 170%; background-color: #0BA0D882; border-radius: 40px; color:#fff;">' . $last_phrase . '</span>';
               if (isset($parts[1])) { echo $parts[1]; }
           } else {
               // Awaryjne wyświetlenie bez podświetlenia
+              $title_text = str_replace(' i ', '&nbsp;i ', $title_text);
               echo $title_text;
           }
         ?>
@@ -263,26 +275,44 @@ $template_uri = get_template_directory_uri();
         <img class="masai-small" src='<?php echo $masai_small_img; ?>' alt="Masaj">
       </div>
       
-      <?php if (have_rows('masai_icons', 'masai')) : ?>
-      <div class="masai-icons">
-        <?php while (have_rows('masai_icons', 'masai')) : the_row(); 
-          $icon = get_sub_field('ikona');
-          $opis = get_sub_field('opis');
-        ?>
-        <div class="masai-icon-item">
-          <img src='<?php echo esc_url($icon['url']); ?>' alt="<?php echo esc_attr($icon['alt'] ?? $opis); ?>">
-          <span><?php echo esc_html($opis); ?></span>
+      <div class="masai-icons-and-button">
+        <?php if (have_rows('masai_icons', 'masai')) : ?>
+        <div class="masai-icons">
+          <?php while (have_rows('masai_icons', 'masai')) : the_row(); 
+            $icon = get_sub_field('ikona');
+            $opis = get_sub_field('opis');
+          ?>
+          <div class="masai-icon-item">
+            <img src='<?php echo esc_url($icon['url']); ?>' alt="<?php echo esc_attr($icon['alt'] ?? $opis); ?>">
+            <span><?php echo esc_html($opis); ?></span>
+          </div>
+          <?php endwhile; ?>
+        </div> 
+        <?php else : ?>
+        <!-- Fallback: Domyślne 3 ikony -->
+        <div class="masai-icons">
+          <div class="masai-icon-item">
+            <img src='<?php echo $template_uri; ?>/images/ikon5.png' alt="Spotkanie kultur">
+            <span>Spotkanie kultur</span>
+          </div>
+          <div class="masai-icon-item">
+            <img src='<?php echo $template_uri; ?>/images/ikon6.png' alt="Autentyczna muzyka i taniec">
+            <span>Autentyczna muzyka i taniec</span>
+          </div>
+          <div class="masai-icon-item">
+            <img src='<?php echo $template_uri; ?>/images/ikon7.png' alt="Wspólne doświadczenie">
+            <span>Wspólne doświadczenie</span>
+          </div>
         </div>
-        <?php endwhile; ?>
-      </div> 
-      <?php endif; ?>
+        <?php endif; ?>
+        
+        <a href="<?php echo $masai_cta_link; ?>" 
+          class="btn-cta" 
+          style="display:inline-block; background:#0BA0D8; color:white; margin-top: 2.187vw; font-family:'Inter', sans-serif; font-size:0.937vw; font-weight:500; padding:12px 35px; border-radius:10px; text-decoration:none; transition:background 0.3s;">
+            <?php echo esc_html($masai['masai_cta_text']); ?>
+        </a>
+      </div>
     </div>
-
-    <a href="<?php echo $masai_cta_link; ?>" 
-      class="btn-cta" 
-      style="display:inline-block; background:#0BA0D8; color:white; margin-top: 2.187vw; font-family:'Inter', sans-serif; font-size:0.937vw; font-weight:500; padding:12px 35px; border-radius:10px; text-decoration:none; transition:background 0.3s;">
-        <?php echo esc_html($masai['masai_cta_text']); ?>
-    </a>
   </div>
 </section>
 <?php endif; ?>
@@ -332,10 +362,11 @@ $stats_array = [
         left: 0; 
         width: 100%; 
         height: 100%; 
-        background-image: url('assets/tlo3.png'); /* PAMIĘTAJ: Zmień na ścieżkę WordPress! */
+        background-image: url('<?php echo get_template_directory_uri(); ?>/images/footerbg.jpg');
         background-repeat: no-repeat; 
         background-size: cover; 
-        opacity: 0.1;
+        background-position: center center;
+        opacity: 0.3;
     "></div>
 
     <div class="stats-content" style="
@@ -349,7 +380,12 @@ $stats_array = [
         text-align: center;
     ">
         
-        <?php foreach ($stats_array as $stat) : 
+        <?php 
+        $stats_count = count($stats_array);
+        $index = 0;
+        foreach ($stats_array as $stat) : 
+            $index++;
+            $is_last = ($index === $stats_count);
             $number = $stat['number'];
             $description = $stat['description'];
             $icon = $stat['icon']; 
@@ -361,7 +397,31 @@ $stats_array = [
             max-width: 250px; 
             color: white;
         ">
-            <?php if ($icon) : ?>
+            <?php if ($is_last) : ?>
+                <!-- Ostatnia ikona - znak nieskończoności -->
+                <div class="stat-icon-wrapper" style="
+                    margin-bottom: 20px; 
+                    height: 80px; 
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                ">
+                    <svg class="stat-icon infinity-icon" 
+                         viewBox="0 0 120 50" 
+                         style="
+                            width: 80px; 
+                            height: 40px;
+                            fill: none;
+                            stroke: white;
+                            stroke-width: 5;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                         ">
+                        <path d="M 30 25 C 30 12, 40 5, 50 5 C 60 5, 70 12, 70 25 C 70 38, 60 45, 50 45 C 40 45, 30 38, 30 25 Z" />
+                        <path d="M 90 25 C 90 12, 80 5, 70 5 C 60 5, 50 12, 50 25 C 50 38, 60 45, 70 45 C 80 45, 90 38, 90 25 Z" />
+                    </svg>
+                </div>
+            <?php elseif ($icon) : ?>
                 <div class="stat-icon-wrapper" style="
                     margin-bottom: 20px; 
                     height: 80px; 
@@ -463,7 +523,7 @@ function get_card_icon_url($card) {
             ?>
         </span>
       </h2>
-      <p class="offer-description">
+      <p class="offer-description" style="padding-top: 1vw; padding-bottom: 2vw;">
         <?php echo esc_html($offer_description); ?>
       </p>
     </div>

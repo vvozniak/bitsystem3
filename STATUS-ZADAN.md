@@ -316,3 +316,171 @@
 ---
 
 **Ostatnia aktualizacja:** 2024 - po implementacji CPT logotypów, ACF dla oferty i szablonu page-plain.php
+
+---
+
+## 🎨 ZADANIA WIZUALNE - do dopracowania/zrobienia na czwartek
+
+**Źródło:** https://bit-system.pl/
+
+### Priorytety SEO i globalne
+
+#### Top 5: Nazwa strony i podstron - Yoast SEO do wgrania
+- ❌ Wgranie Yoast SEO dla wszystkich stron i podstron
+
+#### Top 6: Opisy meta i cała reszta SEO stron i podstron
+- ❌ Opisy meta dla wszystkich stron i podstron
+- ❌ Kompletna konfiguracja SEO
+
+#### Top 7: https://bit-system.pl/aboutus/ - linki niech będą po Polsku
+- ❌ Zmiana linków na polskie wersje językowe
+
+---
+
+### 🏠 STRONA GŁÓWNA
+
+#### Przyciski CTA
+- ❌ Przycisk "dowiedz się więcej" nie przenosi nigdzie
+- ❌ Przycisk "poznaj nasz zespół" też nigdzie nie przenosi
+- ❌ Przycisk "poznaj nasze usługi" nigdzie nie przenosi
+- ❌ Przycisk "zobacz wszystkie projekty" nigdzie nie przenosi
+
+#### Obrazki i animacje
+- ❌ Obrazki nie ruszają się po najechaniu (niski priorytet)
+- ❌ Obrazki nie są w równej linii
+- ❌ Elementy nie mają animacji
+
+#### Sekcja "Wsparcie projektów badawczych"
+- ❌ Tekst na kafelku "Wsparcie projektów badawczych" nie jest wyśrodkowany
+- ❌ Ikonki są bliżej krawędzi niż na Figmie
+
+#### Inne elementy
+- ❌ Lekko przycięty element
+- ❌ Kafelki nie mają animacji i nie przenoszą do wpisów
+
+#### Sekcja kontaktowa
+- ❌ Sekcję z kontaktem upodobnić bardziej do tego co jest na Figmie
+
+#### Stopka
+- ❌ Dodać zdjęcie w tle tak jak na Figmie
+- ❌ Usunąć kwadraty przy danych kontaktowych
+
+---
+
+### 👥 O NAS
+
+#### Sekcja górna
+- ❌ Od samej góry: zwiększyć przerwę
+- ❌ Usunąć linię
+- ❌ Dodać zdjęcie w tle pod opisami osób
+- ❌ Dodać niebieskie elementy przy zdjęciach
+
+#### Przycisk CTA
+- ❌ Przycisk "poznaj nasze usługi" nie przenosi do oferty
+- ❌ Można usunąć to podkreślenie przy napisie
+
+#### Filmik
+- ❌ Czy filmik można trochę przesunąć w dół tak żeby twarz pani nie była ucięta?
+
+#### Sekcja z blogiem, kontaktem i stopką
+- ❌ Uwagi takie same jak na stronie głównej
+
+---
+
+### 💼 OFERTA
+
+#### Niebieski element
+- ❌ Brak zaokrągleń przy niebieskim elemencie
+
+#### Rozłożenie tekstu
+- ❌ Inne rozłożenie tekstu (marginesy) - główny tekst powinien iść trochę w prawo
+- ❌ Kafelki w całości do boków strony
+
+#### Animacje
+- ❌ Kafelki nie mają animacji po najechaniu
+
+#### Przycisk CTA
+- ❌ Przycisk "zobacz nasze realizacje" nie przenosi do podstrony nowej z realizacjami
+
+#### Sekcje "Dlaczego warto nam zaufać", kontakt i stopka
+- ❌ Uwagi takie same jak na stronie głównej
+
+---
+
+### 🏗️ ZREALIZOWANE PROJEKTY
+
+#### Nagłówek i tekst
+- ❌ Nagłówek i tekst mógłby być nieco przesunięty w prawo
+
+#### Niebieski element
+- ❌ Niebieski element nie ma zaokrągleń
+
+#### Zdjęcie
+- ❌ Zdjęcie po lewej stronie nachodzi na tekst
+- ❌ Brak ikonek
+- ❌ Zdjęcia nie mają animacji
+- ❌ Na Figmie zdjęcia sięgają do samych boków ekranu
+
+#### Przycisk CTA
+- ❌ Przycisk "dowiedz się więcej" nie przenosi
+
+#### Projekt "Kolej na kobiet"
+- ❌ Brakuje wyrazu
+- ❌ Niebieski pasek nachodzi na tekst
+
+#### Przyciski "dowiedz się więcej"
+- ❌ Niespójne przyciski "dowiedz się więcej" przy każdej z realizacji - każdy jest inny
+
+#### Kontakt i stopka
+- ❌ Uwagi tak jak na stronie głównej
+
+---
+
+### 📰 AKTUALNOŚCI
+
+#### Nagłówek
+- ❌ Brakuje nagłówka "blog"
+- ❌ Nie pogrubił się tekst i zostały **
+
+#### Kafelki
+- ❌ Kafelki nie mają animacji
+- ❌ Czy na pewno się przewijają?
+
+#### Kontakt
+- ❌ Elementy zaznaczone na zdjęciu z Figmy
+
+#### Formularz kontaktowy
+- ❌ Uwagi tak jak na stronie głównej
+
+---
+
+### 📱 MOBILKA
+
+#### Marginesy i wyrównanie
+- ❌ Poprawić marginesy - strona układa się trochę krzywo, raz tekst zaczyna się bardziej z lewej a raz trochę mniej
+- ❌ Ujednolicić wielkość tekstów i gdzie się zaczynają
+  - Każdy nagłówek ma ten sam rozmiar i tę samą linię
+  - Każda treść ma ten sam rozmiar i też jest w jednej linii - niezależnie od tego jaki element jest to na stronie
+- ❌ Poprawić wyrównanie tekstów - może wyjustowanie ich wyglądałoby lepiej niż np. wyrównanie do lewej
+
+#### Problemy z tekstem
+- ❌ Czasami rozjeżdżają się zdania i w nowej linii zdanie zaczyna się od przecinka
+
+#### Strona główna - sekcja z ofertą
+- ❌ Ikonki w sekcji z ofertą są za duże
+- ❌ Nie ma wystarczających przerw
+
+#### Social media
+- ❌ Ikonki SM są za małe
+
+#### Slajder z logo firm
+- ❌ Slajder z logo firm trochę jest przycina od góry i od dołu
+
+#### Stopka
+- ❌ Stopka jest do poprawy - za bardzo się rozjeżdża
+- ❌ Czcionka jest za mała
+
+#### Strzałka do góry
+- ❌ Strzałka, która przerzuca do góry strony też jest trochę za mała
+
+---

@@ -108,7 +108,7 @@ $team_members = get_field('aboutus_team_members');
 ?>
 
 <section class="kim-jestesmy">
-    <div class="kj-gora">
+    <div class="kj-gora" style="padding-top: 2vw; padding-bottom: 2vw;">
         <div class="kj-title">
             <?php echo esc_html($kim_title); ?> 
         </div>
@@ -227,7 +227,7 @@ $what_video_poster = get_field('aboutus_what_video_poster');
     </video>
   
   <div class ="text-column">
-    <p class="subtitle"><?php echo esc_html($what_subtitle); ?></p>
+    <p class="subtitle" w><?php echo esc_html($what_subtitle); ?></p>
     <h2><?php echo nl2br(esc_html($what_title_before)); ?><span class="highlight">
         <?php echo esc_html($what_title_highlight); ?></span>
     </h2>
