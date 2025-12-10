@@ -10,7 +10,7 @@ get_header();
 
   <!-- Stałe tło -->
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo3.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo3.webp" 
     alt="Tło realizacji" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >

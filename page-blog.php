@@ -8,7 +8,7 @@ get_header();
 <!-- HERO -->
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
     alt="Tło bloga" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -41,7 +41,7 @@ $grid_total_width = 'calc(3 * ' . $kafelek_size . ' + 2 * ' . $kafelek_gap . ')'
   <div class="aktualnosci-container" style="display: flex; max-width: 90vw; margin: 0 auto; position: relative; z-index: 2;">
       
       <div class="figure-column" style="width: <?php echo $figure_width; ?>; flex-shrink: 0; position: relative; height: 100%;">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/Group 1.png" alt="Figura tła" class="img-figura" style="width: 100%; height: auto; object-fit: contain; opacity: 1; display: block; margin-top: 5vw;">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Group 1.webp" alt="Figura tła" class="img-figura" style="width: 100%; height: auto; object-fit: contain; opacity: 1; display: block; margin-top: 5vw;">
       </div>
 
       <div class="content-column" style="flex-grow: 1; width: <?php echo $content_max_width; ?>; padding-left: <?php echo $text_padding_left; ?>;">
@@ -82,7 +82,7 @@ $grid_total_width = 'calc(3 * ' . $kafelek_size . ' + 2 * ' . $kafelek_gap . ')'
                       <?php if ($obrazek): ?>
                           <img src="<?php echo esc_url($obrazek['url']); ?>" alt="<?php echo esc_attr($obrazek['alt']); ?>" style="width:100%; height:100%; object-fit:cover;">
                       <?php else: ?>
-                          <img src="<?php echo get_template_directory_uri(); ?>/images/default.png" alt="<?php the_title(); ?>" style="width:100%; height:100%; object-fit:cover;">
+                          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/default.webp" alt="<?php the_title(); ?>" style="width:100%; height:100%; object-fit:cover;">
                       <?php endif; ?>
 
                       <div class="overlay" style="position:absolute; bottom:0; left:0; width:100%; height:100%; background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%); z-index:5;"></div>

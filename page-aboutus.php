@@ -32,7 +32,7 @@ $social_links = get_field('aboutus_social_links');
   >
   <?php else : ?>
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -78,19 +78,19 @@ $social_links = get_field('aboutus_social_links');
       <?php endforeach; ?>
     <?php else : ?>
       <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn" 
+        <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn" 
              style="width:100%; height:100%; object-fit:cover;">
       </a>
       <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook" 
+        <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook" 
              style="width:100%; height:100%; object-fit:cover;">
       </a>
       <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram" 
+        <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram" 
              style="width:100%; height:100%; object-fit:cover;">
       </a>
       <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube" 
+        <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube" 
              style="width:100%; height:100%; object-fit:cover;">
       </a>
     <?php endif; ?>
@@ -143,7 +143,7 @@ $team_members = get_field('aboutus_team_members');
         <?php else : ?>
             <div class="person-row michal-row">
                 <img 
-                    src="<?php echo get_template_directory_uri(); ?>/images/Component 19.png"
+                    src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 19.webp"
                     alt="Michał Cichoracki" 
                     class="person-image"
                     
@@ -163,7 +163,7 @@ $team_members = get_field('aboutus_team_members');
 
             <div class="person-row dorota-row">
                 <img 
-                    src="<?php echo get_template_directory_uri(); ?>/images/Component 20.png"
+                    src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 20.webp"
                     alt="Dorota Markiewicz" 
                     class="person-image"
                 >
@@ -202,7 +202,7 @@ $what_video_poster = get_field('aboutus_what_video_poster');
       loop 
       muted 
       playsinline 
-      poster="<?php echo $what_video_poster ? esc_url($what_video_poster['url']) : get_template_directory_uri() . '/images/USŁUGI.png'; ?>" 
+      poster="<?php echo $what_video_poster ? esc_url($what_video_poster['url']) : get_template_directory_uri() . '/images/webp/USŁUGI.webp'; ?>" 
       style="
         position:absolute;
         top:0; 
@@ -277,7 +277,7 @@ $realizations_cta_link = get_field('aboutus_realizations_cta_link') ?: '/realiza
 
         $tytul = get_field('realizacja_tytul');
         $obrazek = get_field('obrazek_tytulowy');
-        $tlo = $obrazek ? esc_url($obrazek['url']) : get_template_directory_uri() . '/images/tlo3.png';
+        $tlo = $obrazek ? esc_url($obrazek['url']) : get_template_directory_uri() . '/images/webp/tlo3.webp';
 
         // Rozdziel tytuł po myślniku, by zakreślić tylko pierwszy fragment
         $parts = explode('-', $tytul, 2);

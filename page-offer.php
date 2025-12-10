@@ -24,7 +24,7 @@ $hero_background = get_field('offer_hero_background_image');
   >
   <?php else : ?>
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -67,19 +67,19 @@ $hero_background = get_field('offer_hero_background_image');
     "
   >
     <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
   </div>
@@ -155,12 +155,12 @@ $hero_background = get_field('offer_hero_background_image');
             } else {
                 // Domyślne wartości jeśli ACF nie jest ustawiony
                 $defaults = [
-                    1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'conference (1) 1.png','color'=>'#000C32','width'=>'35%'],
-                    2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'economic 1.png','color'=>'#0BA0D8','width'=>'65%'],
-                    3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'scientist 1.png','color'=>'#000C32','width'=>'50%'],
-                    4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'culture 1.png','color'=>'#0BA0D8','width'=>'50%'],
-                    5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'economic 1 (1).png','color'=>'#000C32','width'=>'40%'],
-                    6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'economic 1 (2).png','color'=>'#0BA0D8','width'=>'60%'],
+                    1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%'],
+                    2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%'],
+                    3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%'],
+                    4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%'],
+                    5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%'],
+                    6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%'],
                 ];
                 $cards[] = $defaults[$i];
             }
@@ -299,32 +299,32 @@ if (!empty($logos)) :
 <section class="logos-section">
   <div class="logos-strip-container">
     <div class="logos-strip">
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo1.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo1.webp' 
            alt="Logo Partnera 1" 
            class="logo-item" 
            style="height: 1.7188vw;">
       
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo2.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo2.webp' 
            alt="Logo Partnera 2" 
            class="logo-item" 
            style="height: 4.3229vw;">
       
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo3.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo3.webp' 
            alt="Logo Partnera 3" 
            class="logo-item" 
            style="height: 5.7292vw;">
       
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo1.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo1.webp' 
            alt="Logo Partnera 1" 
            class="logo-item" 
            style="height: 1.7188vw;">
       
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo2.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo2.webp' 
            alt="Logo Partnera 2" 
            class="logo-item" 
            style="height: 4.3229vw;">
       
-      <img src='<?php echo get_template_directory_uri(); ?>/images/logo3.png' 
+      <img src='<?php echo get_template_directory_uri(); ?>/images/webp/logo3.webp' 
            alt="Logo Partnera 3" 
            class="logo-item" 
            style="height: 5.7292vw;">
@@ -353,7 +353,7 @@ if (!empty($logos)) :
                class="img-figura"
               style="height: 34.23vw">
           <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/Group 1.png" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Group 1.webp" 
                alt="12" 
                class="img-figura"
               style="height: 34.23vw">
@@ -393,7 +393,7 @@ if (!empty($logos)) :
                alt="<?php echo esc_attr($approach_image_small['alt'] ?: 'Uczestnicy konferencji'); ?>" 
                class="img-small">
           <?php else : ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/images/Component 22.png" 
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 22.webp" 
                alt="Uczestnicy konferencji" 
                class="img-small">
           <?php endif; ?>
@@ -408,7 +408,7 @@ if (!empty($logos)) :
            alt="<?php echo esc_attr($approach_image_large['alt'] ?: 'Prelegent na scenie'); ?>" 
            class="img-large">
       <?php else : ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/images/Component 23.png" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 23.webp" 
            alt="Prelegent na scenie" 
            class="img-large">
       <?php endif; ?>

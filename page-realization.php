@@ -9,7 +9,7 @@ $pageTitle = "Oferta";
 <?php get_header(); ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -46,19 +46,19 @@ $pageTitle = "Oferta";
     "
   >
     <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
   </div>
@@ -139,7 +139,7 @@ $pageTitle = "Oferta";
             left: -5.93vw; 
         ">
             <img 
-                src="<?php echo get_template_directory_uri(); ?>/images/Component 19 (1).png" 
+                src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 19 (1).webp" 
                 alt="Masaj i bawół" 
                 style="
                     width: 37.18vw; 
@@ -192,14 +192,14 @@ $pageTitle = "Oferta";
             ">
                 <?php
                 $features = [
-                    ['text' => 'opowieści o życiu Masajów i ich historii', 'icon' => 'powiesci.png'],
-                    ['text' => 'afrykańską muzykę i karaoke', 'icon' => 'muzyka.png'],
-                    ['text' => 'pokaz tańca i tradycyjnych rytuałów', 'icon' => 'taniec.png'],
-                    ['text' => 'degustację tradycyjnych smaków, wspólne gotowanie i parzenie herbaty', 'icon' => 'degustacja.png'],
-                    ['text' => 'naukę języka masajskiego', 'icon' => 'jezyk.png'],
-                    ['text' => 'warsztaty rękodzieła (m.in. afrykańskie koraliki)', 'icon' => 'rekodzielo.png'],
-                    ['text' => 'konkursy i zabawy dla dzieci i dorosłych', 'icon' => 'konkursy.png'],
-                    ['text' => 'pamiątkowe zdjęcia z Masajem', 'icon' => 'zdjecia.png'],
+                    ['text' => 'opowieści o życiu Masajów i ich historii', 'icon' => 'webp/powiesci.webp'],
+                    ['text' => 'afrykańską muzykę i karaoke', 'icon' => 'webp/muzyka.webp'],
+                    ['text' => 'pokaz tańca i tradycyjnych rytuałów', 'icon' => 'webp/taniec.webp'],
+                    ['text' => 'degustację tradycyjnych smaków, wspólne gotowanie i parzenie herbaty', 'icon' => 'webp/degustacja.webp'],
+                    ['text' => 'naukę języka masajskiego', 'icon' => 'webp/jezyk.webp'],
+                    ['text' => 'warsztaty rękodzieła (m.in. afrykańskie koraliki)', 'icon' => 'webp/rekodzielo.webp'],
+                    ['text' => 'konkursy i zabawy dla dzieci i dorosłych', 'icon' => 'webp/konkursy.webp'],
+                    ['text' => 'pamiątkowe zdjęcia z Masajem', 'icon' => 'webp/zdjecia.webp'],
                 ];
                 
                 foreach ($features as $feature) {
@@ -247,7 +247,7 @@ $pageTitle = "Oferta";
             width: 23.9vw;
         ">
             <img 
-                src="<?php echo get_template_directory_uri(); ?>/images/Component 21.png" 
+                src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 21.webp" 
                 alt="Masaj" 
                 style="
                     width: 100%; 
@@ -275,7 +275,7 @@ $pageTitle = "Oferta";
 
     <!-- LEWA KOLUMNA - FIGURA -->
     <div class="kobiety-tlo">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/Group 1.png" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Group 1.webp" 
            alt="figura dekoracyjna" 
            class="kobiety-figura">
     </div>
@@ -295,19 +295,19 @@ $pageTitle = "Oferta";
 
         <div class="kobiety-icons">
           <div class="kobiety-icon-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/wsparcie.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/wsparcie.webp" alt="">
           <span>wspacie</span>
         </div>
         <div class="kobiety-icon-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/rozwoj.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/rozwoj.webp" alt="">
           <span>rozwój</span>
         </div>
         <div class="kobiety-icon-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/inspiracje.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/inspiracje.webp" alt="">
           <span>inspiracja</span>
         </div>
         <div class="kobiety-icon-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/aktywizacja.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/aktywizacja.webp" alt="">
           <span>aktywizacja</span>
         </div>
         </div>
@@ -318,7 +318,7 @@ $pageTitle = "Oferta";
 
     <!-- PRAWA KOLUMNA - GRAFIKA -->
     <div class="kobiety-right"style="z-index:20;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/kolej.png" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/kolej.webp" 
            alt="Obraz kolejowy" 
            class="kobiety-img">
     </div>
@@ -355,7 +355,7 @@ $pageTitle = "Oferta";
              z-index: 20 ;
         ">
             <img 
-                src="<?php echo get_template_directory_uri(); ?>/images/senior.png" 
+                src="<?php echo get_template_directory_uri(); ?>/images/webp/senior.webp" 
                 alt="Grupa seniorów klaszczących na spotkaniu" 
                 style="
                     width: 37vw; 
@@ -618,7 +618,7 @@ $text_padding_offset = '0.8vw';
             z-index: 20; 
         ">
             <img 
-                src="<?php echo get_template_directory_uri(); ?>/images/senior klub.png" 
+                src="<?php echo get_template_directory_uri(); ?>/images/webp/senior klub.webp" 
                 alt="Grupa seniorów klaszczących na spotkaniu" 
                 style="
                     width: <?php echo $photo_width; ?>; 

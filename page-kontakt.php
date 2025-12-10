@@ -9,7 +9,7 @@ $pageTitle = "Oferta";
 <?php get_header(); ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/tlo.png" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -46,19 +46,19 @@ $pageTitle = "Oferta";
     "
   >
     <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
     <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
   </div>
@@ -188,7 +188,7 @@ $cta_color = '#0BA0D8';
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             width: 25vw; 
         ">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/Component 19.png" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 19.webp" 
                  alt="Zdjęcie Michała Cichorackiego" 
                  style="
                     width: 6vw; 
@@ -220,7 +220,7 @@ $cta_color = '#0BA0D8';
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             width: 25vw; 
         ">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/Component 20.png" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 20.webp" 
                  alt="Zdjęcie Doroty Markiewicz" 
                  style="
                     width: 6vw; 
@@ -252,7 +252,7 @@ $cta_color = '#0BA0D8';
         background-color: #e0e0e0; 
         position: relative;
     ">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/mapa 3.png"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/webp/mapa 3.webp"
              alt="Mapa lokalizacji firmy" 
              style="
                 width: 100%;
