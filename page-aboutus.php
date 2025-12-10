@@ -136,15 +136,23 @@ for ($i = 1; $i <= 4; $i++) {
     $name = get_field("aboutus_member_{$i}_name");
     $description = get_field("aboutus_member_{$i}_description");
     
-    // Merge with defaults
+    // Check if ACF field has actual value (not empty string or false)
+    $has_photo = !empty($photo) && !empty($photo['url']);
+    $has_name = !empty($name);
+    
+    // Merge with defaults only if ACF field is empty
     $member = [
-        'photo' => $photo ?: $default_members[$i]['photo'],
-        'name' => $name ?: $default_members[$i]['name'],
-        'description' => $description ?: $default_members[$i]['description']
+        'photo' => $has_photo ? $photo : $default_members[$i]['photo'],
+        'name' => $has_name ? $name : $default_members[$i]['name'],
+        'description' => !empty($description) ? $description : $default_members[$i]['description'],
+        'is_default' => !$has_photo && !$has_name  // Track if using defaults
     ];
     
-    // Only add if name or photo exists
-    if (!empty($member['name']) || !empty($member['photo'])) {
+    // Only add if name or photo exists (check actual values, not empty arrays)
+    $has_valid_photo = !empty($member['photo']) && !empty($member['photo']['url']);
+    $has_valid_name = !empty($member['name']);
+    
+    if ($has_valid_name || $has_valid_photo) {
         $team_members[$i] = $member;
     }
 }
@@ -174,8 +182,8 @@ for ($i = 1; $i <= 4; $i++) {
                 // Calculate class based on index: odd (1,3) left, even (2,4) right
                 $person_class = $default_classes[$index];
                 
-                // Use fallback class for default members (1=Michał, 2=Dorota)
-                if ($index <= 2 && $member['name'] === $default_members[$index]['name']) {
+                // Use fallback class for default members (1=Michał, 2=Dorota) only if using defaults
+                if ($index <= 2 && !empty($member['is_default'])) {
                     $person_class .= ' ' . $fallback_classes[$index];
                 }
             ?>
