@@ -19,7 +19,7 @@
       <div class="nav-inner">
         <!-- Logo -->
         <a href="<?php echo home_url(); ?>" class="logo-link">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/Property 1=Default.png" alt="Logo" class="logo-img">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Property 1=Default.webp" alt="Logo" class="logo-img">
         </a>
 
         <!-- 🔹 Przycisk hamburger -->

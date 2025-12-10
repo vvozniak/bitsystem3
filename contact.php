@@ -47,21 +47,21 @@ $youtube = get_field('global_youtube_url', $global_settings_id);
             
             <?php if ($phone) : ?>
                 <div class="contact-detail">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/telephone 1.png" alt="Telefon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/telephone 1.webp" alt="Telefon">
                     <div class="contact-detail-text"><a href="tel:<?php echo esc_attr(str_replace(' ', '', $phone)); ?>"><?php echo esc_html($phone); ?></a></div>
                 </div>
             <?php endif; ?>
 
             <?php if ($email) : ?>
                 <div class="contact-detail">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/mail 1.png" alt="Email">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/mail 1.webp" alt="Email">
                     <div class="contact-detail-text"><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></div>
                 </div>
             <?php endif; ?>
 
             <?php if ($address1 && $address2) : ?>
                 <div class="contact-detail-address">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/maps-and-flags 1.png" alt="Lokalizacja">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/maps-and-flags 1.webp" alt="Lokalizacja">
                     <div class="contact-detail-text">
                         <?php echo esc_html($address1); ?><br><?php echo esc_html($address2); ?>
                     </div>
@@ -69,10 +69,10 @@ $youtube = get_field('global_youtube_url', $global_settings_id);
             <?php endif; ?>
 
             <div class="contact-social-icons">
-                <?php if ($linkedin) : ?><a href="<?php echo esc_url($linkedin); ?>" aria-label="LinkedIn"><img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn"></a><?php endif; ?>
-                <?php if ($facebook) : ?><a href="<?php echo esc_url($facebook); ?>" aria-label="Facebook"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook"></a><?php endif; ?>
-                <?php if ($instagram) : ?><a href="<?php echo esc_url($instagram); ?>" aria-label="Instagram"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram"></a><?php endif; ?>
-                <?php if ($youtube) : ?><a href="<?php echo esc_url($youtube); ?>" aria-label="YouTube"><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube"></a><?php endif; ?>
+                <?php if ($linkedin) : ?><a href="<?php echo esc_url($linkedin); ?>" aria-label="LinkedIn"><img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn"></a><?php endif; ?>
+                <?php if ($facebook) : ?><a href="<?php echo esc_url($facebook); ?>" aria-label="Facebook"><img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook"></a><?php endif; ?>
+                <?php if ($instagram) : ?><a href="<?php echo esc_url($instagram); ?>" aria-label="Instagram"><img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram"></a><?php endif; ?>
+                <?php if ($youtube) : ?><a href="<?php echo esc_url($youtube); ?>" aria-label="YouTube"><img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube"></a><?php endif; ?>
             </div>
         </div>
     </div>

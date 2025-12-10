@@ -38,7 +38,7 @@ $bottom_offset = '3vw';
     <div class="footer-upper-section">
         <div class="footer-content-container">
             <div class="footer-col footer-col-logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/logoW.png" alt="BIT System Logo" class="footer-logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/webp/logoW.webp" alt="BIT System Logo" class="footer-logo">
                 <p class="footer-legal-info">
                     BIT System sp. z o. o.<br>
                     NIP: 5562759098<br>
@@ -87,25 +87,25 @@ $bottom_offset = '3vw';
             <div class="footer-col footer-col-social contact-social-icons">
                 <?php if ($linkedin) : ?>
                 <a href="<?php echo esc_url($linkedin); ?>" aria-label="LinkedIn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn">
                 </a>
                 <?php endif; ?>
                 
                 <?php if ($facebook) : ?>
                 <a href="<?php echo esc_url($facebook); ?>" aria-label="Facebook">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook">
                 </a>
                 <?php endif; ?>
 
                 <?php if ($instagram) : ?>
                 <a href="<?php echo esc_url($instagram); ?>" aria-label="Instagram">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram">
                 </a>
                 <?php endif; ?>
 
                 <?php if ($youtube) : ?>
                 <a href="<?php echo esc_url($youtube); ?>" aria-label="YouTube">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube">
                 </a>
                 <?php endif; ?>
             </div>

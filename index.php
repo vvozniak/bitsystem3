@@ -21,8 +21,8 @@ $template_uri = get_template_directory_uri();
 <body <?php body_class(); ?>>
 
 <?php if ($hero) : 
-  $hero_bg_image = $hero['hero_background_image']['url'] ?? $template_uri . '/images/tlo.png';
-  $hero_img = $hero['hero_image']['url'] ?? $template_uri . '/images/blok.png';
+  $hero_bg_image = $hero['hero_background_image']['url'] ?? $template_uri . '/images/webp/tlo.webp';
+  $hero_img = $hero['hero_image']['url'] ?? $template_uri . '/images/webp/blok.webp';
   $cta_link = esc_url($hero['hero_cta_link'] ?? '/oferta');
 ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:-40px;">
@@ -79,19 +79,19 @@ $template_uri = get_template_directory_uri();
     <!-- Fallback: Domyślne ikony -->
     <div class="icon-row" style="margin-top:3vw; display:flex; gap:4vw; align-items:center; font-size:1vw; padding-bottom:5.78vw;">
       <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/ikon1.png" alt="Biznes" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <img src="<?php echo $template_uri; ?>/images/webp/ikon1.webp" alt="Biznes" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
         <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/ikon2.png" alt="Innowacje" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <img src="<?php echo $template_uri; ?>/images/webp/ikon2.webp" alt="Innowacje" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
         <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/ikon3.png" alt="Trendy" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <img src="<?php echo $template_uri; ?>/images/webp/ikon3.webp" alt="Trendy" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
         <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
       <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/ikon4.png" alt="Kultura" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
+        <img src="<?php echo $template_uri; ?>/images/webp/ikon4.webp" alt="Kultura" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
         <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
       </div>
     </div>
@@ -168,19 +168,19 @@ $template_uri = get_template_directory_uri();
     "
   >
     <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
-      <img src="<?php echo $template_uri; ?>/images/linkedin.png" alt="LinkedIn" 
+      <img src="<?php echo $template_uri; ?>/images/webp/linkedin.webp" alt="LinkedIn" 
            style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
     </a>
     <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
-      <img src="<?php echo $template_uri; ?>/images/facebook.png" alt="Facebook" 
+      <img src="<?php echo $template_uri; ?>/images/webp/facebook.webp" alt="Facebook" 
            style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
     </a>
     <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
-      <img src="<?php echo $template_uri; ?>/images/instagram.png" alt="Instagram" 
+      <img src="<?php echo $template_uri; ?>/images/webp/instagram.webp" alt="Instagram" 
            style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
     </a>
     <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden; background-color:rgba(0,0,0,0.5); padding:0.3vw;">
-      <img src="<?php echo $template_uri; ?>/images/youtube.png" alt="YouTube" 
+      <img src="<?php echo $template_uri; ?>/images/webp/youtube.webp" alt="YouTube" 
            style="width:100%; height:100%; object-fit:contain; filter: brightness(0) invert(1);">
     </a>
   </div>
@@ -246,15 +246,15 @@ $template_uri = get_template_directory_uri();
 
 
 <?php if ($masai) : 
-  $masai_bg = $masai['masai_main_image']['url'] ?? $template_uri . '/images/africa 2.png';
-  $masai_small_img = $masai['masai_small_image']['url'] ?? $template_uri . '/images/ms2.png';
+  $masai_bg = $masai['masai_main_image']['url'] ?? $template_uri . '/images/webp/africa 2.webp';
+  $masai_small_img = $masai['masai_small_image']['url'] ?? $template_uri . '/images/webp/ms2.webp';
   $masai_cta_link = esc_url($masai['masai_cta_link'] ?? '#');
 ?>
 <section class="masai-section" 
   style="background-color:#fff; background-image:url('<?php echo $masai_bg; ?>'); background-repeat:no-repeat; background-position:right center; background-size:contain;">
 
   <div class="masai-left">
-    <img src='<?php echo $template_uri; ?>/images/ms1.png'  alt="Grupa Masajów w tradycyjnych strojach">
+    <img src='<?php echo $template_uri; ?>/images/webp/ms1.webp'  alt="Grupa Masajów w tradycyjnych strojach">
   </div>
 
   <div class="masai-right">
@@ -292,15 +292,15 @@ $template_uri = get_template_directory_uri();
         <!-- Fallback: Domyślne 3 ikony -->
         <div class="masai-icons">
           <div class="masai-icon-item">
-            <img src='<?php echo $template_uri; ?>/images/ikon5.png' alt="Spotkanie kultur">
+            <img src='<?php echo $template_uri; ?>/images/webp/ikon5.webp' alt="Spotkanie kultur">
             <span>Spotkanie kultur</span>
           </div>
           <div class="masai-icon-item">
-            <img src='<?php echo $template_uri; ?>/images/ikon6.png' alt="Autentyczna muzyka i taniec">
+            <img src='<?php echo $template_uri; ?>/images/webp/ikon6.webp' alt="Autentyczna muzyka i taniec">
             <span>Autentyczna muzyka i taniec</span>
           </div>
           <div class="masai-icon-item">
-            <img src='<?php echo $template_uri; ?>/images/ikon7.png' alt="Wspólne doświadczenie">
+            <img src='<?php echo $template_uri; ?>/images/webp/ikon7.webp' alt="Wspólne doświadczenie">
             <span>Wspólne doświadczenie</span>
           </div>
         </div>
@@ -767,7 +767,7 @@ $get_img_alt = fn($img, $default = 'Image') => is_array($img) && !empty($img['al
             $tlo = esc_url($obrazek['url']);
         } else {
             // Alternatywny obrazek, jeśli pole jest puste (upewnij się, że ta ścieżka jest poprawna!)
-            $tlo = get_template_directory_uri() . '/images/tlo3.png'; 
+            $tlo = get_template_directory_uri() . '/images/webp/tlo3.webp'; 
         }
 
         // Logika dzielenia tytułu na część akcentowaną i resztę
