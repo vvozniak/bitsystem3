@@ -123,20 +123,43 @@ $team_members = get_field('aboutus_team_members');
     </div>
     <div class="kj-dol">
         <?php if ($team_members && count($team_members) > 0) : ?>
-            <?php foreach ($team_members as $member) : ?>
-                <div class="person-row <?php echo esc_attr($member['row_class']); ?>">
+            <?php 
+            $index = 0;
+            $max_team_members = 4;
+            $default_classes = ['person-1', 'person-2', 'person-3', 'person-4'];
+            foreach ($team_members as $member) : 
+                // Only display if member has at least a name or photo
+                if (empty($member['name']) && empty($member['photo'])) {
+                    continue;
+                }
+                
+                $index++;
+                // Stop displaying after max team members
+                if ($index > $max_team_members) {
+                    break;
+                }
+                
+                // Auto-assign class based on index if no custom class is provided
+                $class_index = min($index - 1, count($default_classes) - 1);
+                $person_class = !empty($member['row_class']) ? $member['row_class'] : $default_classes[$class_index];
+            ?>
+                <div class="person-row <?php echo esc_attr($person_class); ?>">
                     <?php if ($member['photo']) : ?>
                         <img 
                             src="<?php echo esc_url($member['photo']['url']); ?>"
-                            alt="<?php echo esc_attr($member['name']); ?>" 
+                            alt="<?php echo esc_attr($member['name'] ?: 'Team member'); ?>" 
                             class="person-image"
                         >
                     <?php endif; ?>
                     <div class="person-content">
-                        <h2><?php echo esc_html($member['name']); ?></h2>
-                        <p>
-                            <?php echo esc_html($member['description']); ?>
-                        </p>
+                        <?php if ($member['name']) : ?>
+                            <h2><?php echo esc_html($member['name']); ?></h2>
+                        <?php endif; ?>
+                        <?php if ($member['description']) : ?>
+                            <p>
+                                <?php echo esc_html($member['description']); ?>
+                            </p>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
