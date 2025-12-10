@@ -29,15 +29,28 @@ Strona "O nas" (`page-aboutus.php`) została zaktualizowana o integrację z Adva
 ### 3. Zespół - Osoby
 
 **Pole:**
-- `aboutus_team_members` - Repeater dla członków zespołu
-  - `photo` - Zdjęcie osoby
+- `aboutus_team_members` - Repeater dla członków zespołu (maksymalnie 4 osoby)
+  - `photo` - Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)
   - `name` - Imię i nazwisko
   - `description` - Opis osoby
-  - `row_class` - Klasa CSS dla rzędu (opcjonalnie, np. "michal-row", "dorota-row")
+  - `row_class` - Klasa CSS dla rzędu (opcjonalnie, automatycznie przypisywana)
 
-**Domyślne osoby (jeśli repeater jest pusty):**
-- Michał Cichoracki (`/images/Component 19.png`)
-- Dorota Markiewicz (`/images/Component 20.png`)
+**Automatyczne przypisywanie klas:**
+- Osoba 1: `person-1` (zdjęcie po lewej, niebieski pasek z lewej)
+- Osoba 2: `person-2` (zdjęcie po prawej, niebieski pasek z prawej)
+- Osoba 3: `person-3` (zdjęcie po lewej, niebieski pasek z lewej)
+- Osoba 4: `person-4` (zdjęcie po prawej, niebieski pasek z prawej)
+
+**Renderowanie warunkowe:**
+- Wyświetlane są tylko osoby, które mają wypełnione pole `name` lub `photo`
+- Puste pola nie są wyświetlane na stronie
+- Jeśli pole `name` jest puste ale `photo` istnieje, alt obrazu będzie "Team member"
+
+**Kompatybilność wsteczna:**
+- Klasy `michal-row` i `dorota-row` nadal działają dla istniejącej treści
+- Jeśli repeater jest pusty, wyświetlane są domyślne osoby:
+  - Michał Cichoracki (`/images/webp/Component 19.webp`)
+  - Dorota Markiewicz (`/images/webp/Component 20.webp`)
 
 ### 4. Sekcja "Co robimy?"
 
@@ -79,13 +92,21 @@ Strona "O nas" (`page-aboutus.php`) została zaktualizowana o integrację z Adva
 
 ### 3. Dodawanie członków zespołu
 
+**Limit:** Możesz dodać maksymalnie 4 osoby.
+
 1. W sekcji **Zespół - Osoby** kliknij **Dodaj osobę**
-2. Wypełnij:
-   - **Zdjęcie** - Prześlij zdjęcie osoby
+2. Wypełnij wymagane pola:
+   - **Zdjęcie** - Prześlij zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)
    - **Imię i nazwisko** - Wpisz pełne imię
-   - **Opis** - Wpisz biografię
-   - **Klasa CSS** (opcjonalnie) - Dodaj klasę CSS dla stylizacji (np. "michal-row")
-3. Kliknij **Dodaj osobę** ponownie, aby dodać kolejną osobę
+   - **Opis** - Wpisz biografię i opis roli w firmie
+   - **Klasa CSS** (opcjonalnie) - Zostaw puste, klasa zostanie automatycznie przypisana
+3. Kliknij **Dodaj osobę** ponownie, aby dodać kolejną osobę (maks. 4)
+
+**Uwaga:** 
+- Jeśli nie wypełnisz pól `name` i `photo`, osoba nie będzie wyświetlana
+- Osoby nieparzyste (1, 3) mają zdjęcie po lewej stronie
+- Osoby parzyste (2, 4) mają zdjęcie po prawej stronie
+- Można dodać tylko wybrane osoby (np. tylko 2 z 4), pozostałe miejsca pozostaną puste i nie będą wyświetlane
 
 ### 4. Dodawanie linków społecznościowych
 
