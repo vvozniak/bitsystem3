@@ -125,6 +125,7 @@ $team_members = get_field('aboutus_team_members');
         <?php if ($team_members && count($team_members) > 0) : ?>
             <?php 
             $index = 0;
+            $default_classes = ['person-1', 'person-2', 'person-3', 'person-4'];
             foreach ($team_members as $member) : 
                 // Only display if member has at least a name or photo
                 if (empty($member['name']) && empty($member['photo'])) {
@@ -132,8 +133,12 @@ $team_members = get_field('aboutus_team_members');
                 }
                 
                 $index++;
+                // Stop displaying after 4 persons
+                if ($index > 4) {
+                    break;
+                }
+                
                 // Auto-assign class based on index if no custom class is provided
-                $default_classes = ['person-1', 'person-2', 'person-3', 'person-4'];
                 $person_class = !empty($member['row_class']) ? $member['row_class'] : $default_classes[$index - 1];
             ?>
                 <div class="person-row <?php echo esc_attr($person_class); ?>">
