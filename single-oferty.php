@@ -3,6 +3,13 @@
  * Szablon pojedynczej oferty
  */
 get_header();
+
+// Global settings ID for social media links
+$global_settings_id = 332;
+$linkedin = get_field('global_linkedin_url', $global_settings_id);
+$facebook = get_field('global_facebook_url', $global_settings_id);
+$instagram = get_field('global_instagram_url', $global_settings_id);
+$youtube = get_field('global_youtube_url', $global_settings_id);
 ?>
 
 <!-- HERO SECTION -->
@@ -41,22 +48,30 @@ get_header();
       gap:1.2vw;
     "
   >
-    <a href="#" aria-label="LinkedIn" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
+    <?php if ($linkedin) : ?>
+    <a href="<?php echo esc_url($linkedin); ?>" aria-label="LinkedIn" target="_blank" rel="noopener" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
       <img src="<?php echo get_template_directory_uri(); ?>/images/webp/linkedin.webp" alt="LinkedIn" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
-    <a href="#" aria-label="Facebook" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
+    <?php endif; ?>
+    <?php if ($facebook) : ?>
+    <a href="<?php echo esc_url($facebook); ?>" aria-label="Facebook" target="_blank" rel="noopener" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
       <img src="<?php echo get_template_directory_uri(); ?>/images/webp/facebook.webp" alt="Facebook" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
-    <a href="#" aria-label="Instagram" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
+    <?php endif; ?>
+    <?php if ($instagram) : ?>
+    <a href="<?php echo esc_url($instagram); ?>" aria-label="Instagram" target="_blank" rel="noopener" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
       <img src="<?php echo get_template_directory_uri(); ?>/images/webp/instagram.webp" alt="Instagram" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
-    <a href="#" aria-label="YouTube" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
+    <?php endif; ?>
+    <?php if ($youtube) : ?>
+    <a href="<?php echo esc_url($youtube); ?>" aria-label="YouTube" target="_blank" rel="noopener" style="display:block; width:2.5vw; height:2.5vw; border-radius:50%; overflow:hidden;">
       <img src="<?php echo get_template_directory_uri(); ?>/images/webp/youtube.webp" alt="YouTube" 
            style="width:100%; height:100%; object-fit:cover;">
     </a>
+    <?php endif; ?>
   </div>
 </section>
 
@@ -83,13 +98,15 @@ get_header();
     $obrazki = array_filter([$obrazek_1, $obrazek_2, $obrazek_3]);
     
     if (!empty($obrazki)) :
+      $count = count($obrazki);
+      // Fixed grid: always 3 columns, but only show filled ones
     ?>
-    <div style="display:grid; grid-template-columns:repeat(<?php echo count($obrazki); ?>, 1fr); gap:2vw; margin-bottom:4vw;">
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2vw; margin-bottom:4vw; max-width:100%;">
       <?php foreach ($obrazki as $obrazek) : ?>
-        <div style="border-radius:10px; overflow:hidden;">
+        <div style="border-radius:10px; overflow:hidden; min-height:15vw;">
           <img src="<?php echo esc_url($obrazek['url']); ?>" 
                alt="<?php echo esc_attr($obrazek['alt']); ?>" 
-               style="width:100%; height:auto; object-fit:cover;">
+               style="width:100%; height:100%; object-fit:cover;">
         </div>
       <?php endforeach; ?>
     </div>
@@ -122,7 +139,12 @@ get_header();
 
     <!-- PRZYCISK CTA -->
     <div style="text-align:center; margin-top:5vw;">
-      <a href="/kontakt" 
+      <?php
+      // Dynamiczny link do strony kontaktu
+      $contact_page = get_page_by_path('kontakt');
+      $contact_link = $contact_page ? get_permalink($contact_page->ID) : '/kontakt';
+      ?>
+      <a href="<?php echo esc_url($contact_link); ?>" 
          class="cta-btn"
          style="display:inline-block; background:#0BA0D8; color:white; font-family:'Inter', sans-serif; font-size:1.25vw; font-weight:500; padding:1vw 2.5vw; border-radius:10px; text-decoration:none; transition:background 0.3s;">
         Skontaktuj się
